@@ -23,13 +23,9 @@ namespace tzdevil.Gameplay
         [SerializeField] private int _hexagonLayer = 1 << 6;
         [SerializeField] private HashSet<Vector3> _blankPlaces = new();
 
-        [SerializeField] private RaycastHit[] _results;
-
         private void Awake()
         {
             _transform = transform;
-
-            _results = new RaycastHit[1];
         }
 
         private void Start()
@@ -45,16 +41,10 @@ namespace tzdevil.Gameplay
 
             foreach (var pos in _raycastPoses)
             {
-                var posStart = _transform.position + pos + Vector3.up * 2;
-                var posEnd = _transform.position + pos + Vector3.down;
-
-                if (Physics.RaycastNonAlloc(posStart, posEnd, _results, Mathf.Infinity, _hexagonLayer) <= 0)
+                if (!Physics.Raycast(_transform.position + pos + new Vector3(0, 10, 0), Vector3.down, out RaycastHit hit, Mathf.Infinity, _hexagonLayer))
                 {
-                    print(pos);
-                    _blankPlaces.Add(pos);
+                    _blankPlaces.Add(_transform.position + pos);
                 }
-
-                Debug.DrawLine(posStart, posEnd, Color.red, 100);
             }
 
             _gameManager.OnFindBlankPlace?.Invoke(_blankPlaces);
