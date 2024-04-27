@@ -10,7 +10,7 @@ namespace Alren
     public class GameManager : MonoBehaviour
     {
         [Header("Resources and UI Relatives")]
-        [SerializeField] private List<Resource> res = new();
+        public List<Resource> res = new();
         [SerializeField] private List<TextMeshProUGUI> changeWorkerCountTexts = new();
 
         [SerializeField] private List<TextMeshProUGUI> resWorkerCountTexts = new();

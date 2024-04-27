@@ -4917,7 +4917,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   timerStarted: 0
   timerProgressBar: {fileID: 5951661784411266444}
-  timerLimit: 20
+  timerLimit: 15
   gameManager: {fileID: 5188924397658491525}
 --- !u!1 &5481146644736122693
 GameObject:
@@ -6192,6 +6192,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: edf8c2e998db369448f04e50ec577fb4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  SandGatherTime: 0
+  StoneGatherTime: 10
+  FoodGatherTime: 10
 --- !u!1 &8144821662655994944
 GameObject:
   m_ObjectHideFlags: 0

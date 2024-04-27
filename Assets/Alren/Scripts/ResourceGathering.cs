@@ -16,6 +16,7 @@ public class ResourceGathering : MonoBehaviour
     void Start()
     {
         SandTimer = StoneTimer = FoodTimer = 0;
+        gameManager = GetComponent<GameManager>();
     }
 
     // Update is called once per frame
@@ -24,15 +25,19 @@ public class ResourceGathering : MonoBehaviour
         SandTimer = StoneTimer = FoodTimer += Time.deltaTime;
         if ((int)(10 * SandTimer) >= (int)(10 * SandGatherTime))
         {
-            
+            gameManager.res[0].ResourceCount++;
+            for(int i = 0; i < gameManager.res[0].WorkerCount; i++)
+            {
+
+            }
         }
         if ((int)(10 * StoneTimer) >= (int)(10 * StoneGatherTime))
         {
-
+            gameManager.res[1].ResourceCount++;
         }
         if ((int)(10 * FoodTimer) >= (int)(10 * FoodGatherTime))
         {
-
+            gameManager.res[2].ResourceCount++;
         }
     }
 }
