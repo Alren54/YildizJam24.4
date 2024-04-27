@@ -1400,7 +1400,7 @@ GameObject:
   - component: {fileID: 1982304844}
   - component: {fileID: 1982304843}
   m_Layer: 0
-  m_Name: GameManager
+  m_Name: tzdevil.GameManager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1427,8 +1427,14 @@ MonoBehaviour:
   OnPlaceNewHexagon:
     m_PersistentCalls:
       m_Calls: []
+  _hexagonMeshList:
+  - {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+  - {fileID: -4575734979276873811, guid: 5a6c3e9830b1da54683265d9577f43fe, type: 3}
+  _hexagonMaterialList:
+  - {fileID: 2100000, guid: df0f2efc606a64642a13f7d0fab0c557, type: 2}
+  - {fileID: 2100000, guid: 7ff4da8451d90f3439e537f0c77281b0, type: 2}
   hexagonCount: 0
-  _hexagonPrefab: {fileID: 1417395725519817228, guid: a772c3298412c3445af5573f60f40fa9,
+  _hexagonPrefab: {fileID: 7376725360666682536, guid: a772c3298412c3445af5573f60f40fa9,
     type: 3}
   _hexagonList: []
   _alreadySelecting: 0
@@ -3372,6 +3378,7 @@ MonoBehaviour:
   _gameManager: {fileID: 0}
   _camera: {fileID: 0}
   _renderer: {fileID: 0}
+  _meshFilter: {fileID: 0}
   _raycastPoses:
   - {x: -1.75, y: 0, z: 1}
   - {x: 0, y: 0, z: 2}
@@ -3381,6 +3388,7 @@ MonoBehaviour:
   - {x: 1.75, y: 0, z: -1}
   _hexagonLayer: 64
   _hexagonType: 0
+  _mesh: {fileID: 0}
   _material: {fileID: 0}
   _placed: 1
 --- !u!64 &3469287837004512746
@@ -3451,6 +3459,7 @@ MonoBehaviour:
   _gameManager: {fileID: 0}
   _camera: {fileID: 0}
   _renderer: {fileID: 0}
+  _meshFilter: {fileID: 0}
   _raycastPoses:
   - {x: -1.75, y: 0, z: 1}
   - {x: 0, y: 0, z: 2}
@@ -3460,6 +3469,7 @@ MonoBehaviour:
   - {x: 1.75, y: 0, z: -1}
   _hexagonLayer: 64
   _hexagonType: 0
+  _mesh: {fileID: 0}
   _material: {fileID: 0}
   _placed: 1
 --- !u!64 &3469287838069785410
@@ -3530,6 +3540,7 @@ MonoBehaviour:
   _gameManager: {fileID: 0}
   _camera: {fileID: 0}
   _renderer: {fileID: 0}
+  _meshFilter: {fileID: 0}
   _raycastPoses:
   - {x: -1.75, y: 0, z: 1}
   - {x: 0, y: 0, z: 2}
@@ -3539,6 +3550,7 @@ MonoBehaviour:
   - {x: 1.75, y: 0, z: -1}
   _hexagonLayer: 64
   _hexagonType: 0
+  _mesh: {fileID: 0}
   _material: {fileID: 0}
   _placed: 1
 --- !u!64 &3469287838090572463
@@ -3609,6 +3621,7 @@ MonoBehaviour:
   _gameManager: {fileID: 0}
   _camera: {fileID: 0}
   _renderer: {fileID: 0}
+  _meshFilter: {fileID: 0}
   _raycastPoses:
   - {x: -1.75, y: 0, z: 1}
   - {x: 0, y: 0, z: 2}
@@ -3618,6 +3631,7 @@ MonoBehaviour:
   - {x: 1.75, y: 0, z: -1}
   _hexagonLayer: 64
   _hexagonType: 0
+  _mesh: {fileID: 0}
   _material: {fileID: 0}
   _placed: 1
 --- !u!64 &3469287838101388162
@@ -3688,6 +3702,7 @@ MonoBehaviour:
   _gameManager: {fileID: 0}
   _camera: {fileID: 0}
   _renderer: {fileID: 0}
+  _meshFilter: {fileID: 0}
   _raycastPoses:
   - {x: -1.75, y: 0, z: 1}
   - {x: 0, y: 0, z: 2}
@@ -3697,6 +3712,7 @@ MonoBehaviour:
   - {x: 1.75, y: 0, z: -1}
   _hexagonLayer: 64
   _hexagonType: 0
+  _mesh: {fileID: 0}
   _material: {fileID: 0}
   _placed: 1
 --- !u!64 &3469287838433121114
@@ -3767,6 +3783,7 @@ MonoBehaviour:
   _gameManager: {fileID: 0}
   _camera: {fileID: 0}
   _renderer: {fileID: 0}
+  _meshFilter: {fileID: 0}
   _raycastPoses:
   - {x: -1.75, y: 0, z: 1}
   - {x: 0, y: 0, z: 2}
@@ -3776,6 +3793,7 @@ MonoBehaviour:
   - {x: 1.75, y: 0, z: -1}
   _hexagonLayer: 64
   _hexagonType: 0
+  _mesh: {fileID: 0}
   _material: {fileID: 0}
   _placed: 1
 --- !u!64 &3469287838579083902
@@ -6192,7 +6210,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: edf8c2e998db369448f04e50ec577fb4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  SandGatherTime: 0
+  SandGatherTime: 10
   StoneGatherTime: 10
   FoodGatherTime: 10
 --- !u!1 &8144821662655994944

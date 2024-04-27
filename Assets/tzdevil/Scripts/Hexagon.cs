@@ -11,6 +11,7 @@ namespace tzdevil.Gameplay
         [SerializeField] private GameManager _gameManager;
         [SerializeField] private Camera _camera;
         [SerializeField] private Renderer _renderer;
+        [SerializeField] private MeshFilter _meshFilter;
 
         [Header("Raycast Settings")]
         [SerializeField]
@@ -26,6 +27,7 @@ namespace tzdevil.Gameplay
 
         [Header("Hexagon Settings")]
         [SerializeField] public HexagonType _hexagonType;
+        [SerializeField] private Mesh _mesh;
         [SerializeField] private Material _material;
 
         [Header("Game Loop")]
@@ -47,9 +49,10 @@ namespace tzdevil.Gameplay
             SendRaycasts();
         }
 
-        public void SetHexagonSettings(HexagonType hexagonType, Material material)
+        public void SetHexagonSettings(HexagonType hexagonType, Mesh mesh, Material material)
         {
             _hexagonType = hexagonType;
+            _mesh = mesh;
             _material = material;
         }
 
@@ -81,8 +84,10 @@ namespace tzdevil.Gameplay
             if (eventData.button == PointerEventData.InputButton.Left && !_placed)
             {
                 _placed = true;
-                _gameManager.OnPlaceNewHexagon?.Invoke(gameObject);
+                _gameManager.OnPlaceNewHexagon?.Invoke(this);
                 _renderer.material = _material;
+                _meshFilter.mesh = _mesh;
+                Debug.Log("placed", gameObject);
             }
         }
     }

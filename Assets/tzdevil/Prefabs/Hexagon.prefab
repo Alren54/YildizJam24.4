@@ -124,6 +124,8 @@ MonoBehaviour:
   _gameManager: {fileID: 0}
   _camera: {fileID: 0}
   _renderer: {fileID: 0}
+  _mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+  _meshFilter: {fileID: 8313955611247176350}
   _raycastPoses:
   - {x: -1.75, y: 0, z: 1}
   - {x: 0, y: 0, z: 2}

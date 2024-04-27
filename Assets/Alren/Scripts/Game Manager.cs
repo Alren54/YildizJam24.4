@@ -79,7 +79,7 @@ namespace Alren
                 i++;
             }
             i = 0;
-            foreach(var text in changeWorkerCountTexts)
+            foreach (var text in changeWorkerCountTexts)
             {
                 text.SetText(res[i].WorkerCount.ToString());
                 i++;
@@ -89,7 +89,7 @@ namespace Alren
         private void SetResourceCountTexts()
         {
             int i = 0;
-            foreach(var text in resCountTexts)
+            foreach (var text in resCountTexts)
             {
                 text.SetText(res[i].ResourceCount.ToString());
                 i++;
@@ -106,14 +106,14 @@ namespace Alren
             }
         }
 
-        public void BuyHexagon(int element){
+        public void BuyHexagon(int element)
+        {
             if (res[element].ResourceCount >= 20)
             {
                 res[element].ResourceCount -= 20;
-                StartCoroutine(tzGameManager.BuyNewBlock());
+                StartCoroutine(tzGameManager.BuyNewBlock(element));
                 SetResourceCountTexts();
             }
-
         }
 
         public void StartDisaster()

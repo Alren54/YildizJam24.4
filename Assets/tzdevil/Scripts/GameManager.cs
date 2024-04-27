@@ -15,14 +15,19 @@ namespace tzdevil.Gameplay
 
         public UnityEvent OnTryBuyNewHexagon;
         public UnityEvent<HashSet<Vector3>> OnFindBlankHexagon;
-        public UnityEvent<GameObject> OnPlaceNewHexagon;
+        public UnityEvent<Hexagon> OnPlaceNewHexagon;
 
+        [Header("Hexagon Settings")]
+        [SerializeField] private Mesh[] _hexagonMeshList;
+        [SerializeField] private Material[] _hexagonMaterialList;
+
+        [Header("Hexagon Properties")]
         [SerializeField] private HashSet<Vector3> _blankPlaces;
         [SerializeField] private int hexagonCount;
 
         [Header("Game Loop")]
-        [SerializeField] private GameObject _hexagonPrefab;
-        [SerializeField] private List<GameObject> _hexagonList;
+        [SerializeField] private Hexagon _hexagonPrefab;
+        [SerializeField] private List<Hexagon> _hexagonList;
         [SerializeField] private bool _alreadySelecting;
 
         private void Awake()
@@ -47,7 +52,7 @@ namespace tzdevil.Gameplay
             OnPlaceNewHexagon.RemoveListener(PlacedNewHexagon);
         }
 
-        public IEnumerator BuyNewBlock()
+        public IEnumerator BuyNewBlock(int elementId)
         {
             _alreadySelecting = true;
 
@@ -56,7 +61,7 @@ namespace tzdevil.Gameplay
 
             yield return new WaitForSeconds(.1f);
 
-            ShowAllBlankPlaces();
+            ShowAllBlankPlaces(elementId);
         }
 
         private void FoundBlankPlace(HashSet<Vector3> blankPlaces)
@@ -65,9 +70,9 @@ namespace tzdevil.Gameplay
                 _blankPlaces.Add(place);
         }
 
-        private void PlacedNewHexagon(GameObject hexagon)
+        private void PlacedNewHexagon(Hexagon hexagon)
         {
-            List<GameObject> listToBeRemoved = new();
+            List<Hexagon> listToBeRemoved = new();
             foreach (var place in _hexagonList)
             {
                 if (place == hexagon)
@@ -85,20 +90,19 @@ namespace tzdevil.Gameplay
             _alreadySelecting = false;
         }
 
-        private void Update()
-        {
-            if (_keyboard.lKey.wasPressedThisFrame && !_alreadySelecting)
-                StartCoroutine(BuyNewBlock());
-        }
-
-        private void ShowAllBlankPlaces()
+        private void ShowAllBlankPlaces(int elementId)
         {
             int i = 0;
             foreach (var place in _blankPlaces)
             {
                 if (i <= _hexagonList.Count)
                 {
+                    var hexagonType = (HexagonType)elementId;
+                    var hexagonMesh = _hexagonMeshList[elementId];
+                    var hexagonMaterial = _hexagonMaterialList[elementId];
+
                     var hexagon = Instantiate(_hexagonPrefab, place, Quaternion.identity);
+                    hexagon.SetHexagonSettings(hexagonType, hexagonMesh, hexagonMaterial);
                     _hexagonList.Add(hexagon);
                 }
                 else
