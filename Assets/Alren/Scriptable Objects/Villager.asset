@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: Villager
   m_EditorClassIdentifier: 
   ID: 3
-  AvailableCount: 40
+  WorkerCount: 25
+  ResourceCount: 200
   Name: Villager
   Description: To gather more resources

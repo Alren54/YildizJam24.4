@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: Sand
   m_EditorClassIdentifier: 
   ID: 0
-  AvailableCount: 10
+  WorkerCount: 10
+  ResourceCount: 400
   Name: Sand
   Description: To build less endurable but cheap platforms

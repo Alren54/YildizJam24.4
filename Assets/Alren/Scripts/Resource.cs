@@ -6,7 +6,8 @@ using UnityEngine;
 public class Resource : ScriptableObject
 {
     public int ID;
-    public int AvailableCount;
+    public int WorkerCount;
+    public int ResourceCount;
     public string Name;
     public string Description;
 }
