@@ -34,7 +34,7 @@ public class ResourceGathering : MonoBehaviour
         SandTimer += Time.deltaTime;
         StoneTimer += Time.deltaTime;
         FoodTimer += Time.deltaTime;
-        if ((int)(10 * SandTimer) >= (int)(10 * currentSandGatherTime) && gameManager.res[0].WorkerCount > 0)
+        if ((int)(100000 * SandTimer) >= (int)(100000 * currentSandGatherTime) && gameManager.res[0].WorkerCount > 0)
         {
             gameManager.res[0].ResourceCount++;
             isResourceChanged = true;
@@ -43,15 +43,12 @@ public class ResourceGathering : MonoBehaviour
             if (gameManager.res[0].WorkerCount > 0)
             {
                 tempTimer = SandGatherTime;
-                for (int i = 0; i < gameManager.res[0].WorkerCount; i++)
-                {
-                    tempTimer = tempTimer * 9 / 10;
-                }
+                tempTimer = 10 * Mathf.Pow(0.9f, gameManager.res[0].WorkerCount);
                 currentSandGatherTime = tempTimer; 
             }
 
         }
-        if ((int)(10 * StoneTimer) >= (int)(10 * currentStoneGatherTime) && gameManager.res[1].WorkerCount > 0)
+        if ((int)(100000 * StoneTimer) >= (int)(100000 * currentStoneGatherTime) && gameManager.res[1].WorkerCount > 0)
         {
             gameManager.res[1].ResourceCount++;
             isResourceChanged = true;
@@ -67,7 +64,7 @@ public class ResourceGathering : MonoBehaviour
                 currentStoneGatherTime = tempTimer;
             }
         }
-        if ((int)(10 * FoodTimer) >= (int)(10 * currentFoodGatherTime) && gameManager.res[2].WorkerCount > 0)
+        if ((int)(100000 * FoodTimer) >= (int)(100000 * currentFoodGatherTime) && gameManager.res[2].WorkerCount > 0)
         {
             gameManager.res[2].ResourceCount++;
             isResourceChanged = true;
