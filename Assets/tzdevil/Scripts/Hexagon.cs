@@ -28,6 +28,9 @@ namespace tzdevil.Gameplay
         [SerializeField] private Renderer _renderer;
         [SerializeField] private MeshFilter _meshFilter;
 
+        [Header("Open Places")]
+        [SerializeField] private List<Vector3> _placesYouCanPlaceHexagon;
+
         [Header("Raycast Settings")]
         [SerializeField]
         protected List<Vector3> _raycastPoses = new() {
@@ -59,9 +62,6 @@ namespace tzdevil.Gameplay
 
             if (!_placed)
                 gameObject.layer = 0;
-
-            print(GetRoundedPosition(new(-1.75f, 0, 2)));
-            print(GetRoundedPosition(new(-1.75f, 0, 2.1f)));
         }
 
         private void Start()
@@ -74,13 +74,15 @@ namespace tzdevil.Gameplay
             SendRaycasts();
         }
 
-        public void SetHexagonSettings(HexagonType hexagonType, HexagonMeshMaterial hexagonMeshMaterial)
+        public void SetHexagonSettings(HexagonType hexagonType, HexagonMeshMaterial hexagonMeshMaterial, List<Vector3> openPlaces)
         {
             HexagonType = hexagonType;
             _hexagonMeshMaterial = hexagonMeshMaterial;
 
             _meshFilter.mesh = _hexagonMeshMaterial.Mesh;
             _renderer.materials = _hexagonMeshMaterial.MaterialList;
+
+            _placesYouCanPlaceHexagon = openPlaces;
         }
 
         private void OnDisable()
@@ -110,6 +112,12 @@ namespace tzdevil.Gameplay
         {
             if (eventData.button == PointerEventData.InputButton.Left && !_placed)
             {
+                var pos = GetRoundedPosition(_transform.position);
+                pos.y = 0;
+
+                if (!_placesYouCanPlaceHexagon.Contains(pos))
+                    return;
+
                 _placed = true;
                 _gameManager.OnPlaceNewHexagon?.Invoke(this);
                 Debug.Log("placed", gameObject);
@@ -138,6 +146,10 @@ namespace tzdevil.Gameplay
             {
                 Vector3 pointAboveMouse = GetRoundedPosition(hit.point);
 
+                if (!_placesYouCanPlaceHexagon.Contains(pointAboveMouse))
+                {
+                    print("You can't place the hexagon here!");
+                }
                 if (Physics.Raycast(pointAboveMouse + Vector3.up * 10, Vector3.down, out RaycastHit hit2, Mathf.Infinity, 1 << 6 | 1 << 7))
                 {
                     if (hit2.collider.gameObject.layer == 6)
