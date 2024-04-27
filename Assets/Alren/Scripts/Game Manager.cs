@@ -6,13 +6,14 @@ using System.Text;
 using TMPro;
 using tzdevil.Gameplay;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 namespace Alren
 {
     public class GameManager : MonoBehaviour
     {
         public static Alren.GameManager Instance;
-
+        private Keyboard _keyboard;
         [Header("Resources and UI Relatives")]
         public List<Resource> res = new();
         [SerializeField] private List<TextMeshProUGUI> changeWorkerCountTexts = new();
@@ -22,6 +23,7 @@ namespace Alren
 
         [SerializeField] private List<TextMeshProUGUI> marketResourceCountTexts = new();
         [SerializeField] private tzdevil.Gameplay.GameManager tzGameManager;
+        [SerializeField] private GameObject fastForwardImage;
 
         // Sand 0
         // Stone 1
@@ -56,7 +58,7 @@ namespace Alren
         private void Awake()
         {
             Instance = this;
-
+            _keyboard = Keyboard.current;
             AllHexagons = FindObjectsByType<Hexagon>(FindObjectsSortMode.None).Where(h => h != this).Select(h => h.gameObject).ToList();
         }
 
@@ -72,6 +74,21 @@ namespace Alren
             res[3].ResourceCount = villagerResourceCount;
             SetWorkerTexts();
             SetResourceCountTexts();
+            
+        }
+
+        private void Update()
+        {
+            if (_keyboard.spaceKey.wasPressedThisFrame)
+            {
+                Time.timeScale = 3f;
+                fastForwardImage.SetActive(true);
+            }
+            else if (_keyboard.spaceKey.wasReleasedThisFrame)
+            {
+                Time.timeScale = 1f;
+                fastForwardImage.SetActive(false);
+            }
         }
 
         public void IncreaseElementCount(int element)
