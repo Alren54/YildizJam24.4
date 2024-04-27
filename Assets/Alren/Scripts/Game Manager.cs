@@ -11,6 +11,8 @@ namespace Alren
 {
     public class GameManager : MonoBehaviour
     {
+        public static Alren.GameManager Instance;
+
         [Header("Resources and UI Relatives")]
         public List<Resource> res = new();
         [SerializeField] private List<TextMeshProUGUI> changeWorkerCountTexts = new();
@@ -39,7 +41,7 @@ namespace Alren
         [SerializeField] private List<int> prices;
 
         [Header("Hexagons")]
-        [HideInInspector] public List<GameObject> allHexagons;
+        [HideInInspector] public List<GameObject> AllHexagons;
         [SerializeField] LayerMask _hexagonLayer;
         private List<GameObject> bayHexagons = new();
         private List<GameObject> sandHexagons = new();
@@ -50,6 +52,14 @@ namespace Alren
             new(-1.75f, 0, -1),
             new(0, 0, -2),
             new(1.75f, 0, -1)};
+
+        private void Awake()
+        {
+            Instance = this;
+
+            AllHexagons = FindObjectsByType<Hexagon>(FindObjectsSortMode.None).Where(h => h != this).Select(h => h.gameObject).ToList();
+        }
+
         private void Start()
         {
             res[0].WorkerCount = sandWorkerCount;
@@ -62,7 +72,6 @@ namespace Alren
             res[3].ResourceCount = villagerResourceCount;
             SetWorkerTexts();
             SetResourceCountTexts();
-            allHexagons = FindObjectsByType<Hexagon>(FindObjectsSortMode.None).Where(h => h != this).Select(h => h.gameObject).ToList();
         }
 
         public void IncreaseElementCount(int element)
@@ -133,7 +142,7 @@ namespace Alren
         public GameObject GatherBay()
         {
             bayHexagons.Clear();
-            foreach (var hexagon in allHexagons)
+            foreach (var hexagon in AllHexagons)
             {
                 foreach (var pos in _raycastPoses)
                 {
@@ -176,7 +185,7 @@ namespace Alren
 
             print("Felaketin ilki bitti");
 
-            allHexagons.Remove(mainHex);
+            AllHexagons.Remove(mainHex);
 
             HexagonType destroyedHexType = mainHex.GetComponent<Hexagon>().HexagonType;
 
@@ -191,7 +200,7 @@ namespace Alren
                 yield return new WaitForSeconds(.51f);
 
                 print("Felaketin ikimcisi bitti");
-                allHexagons.Remove(alternativeHex);
+                AllHexagons.Remove(alternativeHex);
                 Destroy(alternativeHex);
             }
         }

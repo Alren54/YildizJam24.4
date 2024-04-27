@@ -21,8 +21,7 @@ namespace tzdevil.Gameplay
         public UnityEvent<Hexagon> OnPlaceNewHexagon;
 
         [Header("Hexagon Settings")]
-        [SerializeField] private Mesh[] _hexagonMeshList;
-        [SerializeField] private Material[] _hexagonMaterialList;
+        [SerializeField] private HexagonMeshMaterial[] _hexagonMeshMaterialList;
 
         [Header("Hexagon Properties")]
         [SerializeField] private HashSet<Vector3> _blankPlaces;
@@ -93,7 +92,7 @@ namespace tzdevil.Gameplay
             foreach (var place in listToBeRemoved)
                 _hexagonList.Remove(place);
 
-            _alrenGameManager.allHexagons.Add(hexagon.gameObject);
+            _alrenGameManager.AllHexagons.Add(hexagon.gameObject);
 
             _alreadySelecting = false;
         }
@@ -106,11 +105,10 @@ namespace tzdevil.Gameplay
                 if (i <= _hexagonList.Count)
                 {
                     var hexagonType = (HexagonType)elementId;
-                    var hexagonMesh = _hexagonMeshList[elementId];
-                    var hexagonMaterial = _hexagonMaterialList[elementId];
+                    var hexagonMeshMaterial = _hexagonMeshMaterialList[elementId];
 
                     var hexagon = Instantiate(_hexagonPrefab, place, Quaternion.identity);
-                    hexagon.SetHexagonSettings(hexagonType, hexagonMesh, hexagonMaterial);
+                    hexagon.SetHexagonSettings(hexagonType, hexagonMeshMaterial);
                     _hexagonList.Add(hexagon);
                 }
                 else

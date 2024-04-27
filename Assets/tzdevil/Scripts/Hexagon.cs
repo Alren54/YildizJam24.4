@@ -1,19 +1,26 @@
 using System.Collections.Generic;
 using System.Linq;
-using Unity.Cinemachine;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.InputSystem;
 
 namespace tzdevil.Gameplay
 {
+    [System.Serializable]
+    public class HexagonMeshMaterial
+    {
+        [field: SerializeField] public Mesh Mesh { get; set; }
+        [field: SerializeField] public Material[] MaterialList { get; set; }
+    }
+
     public class Hexagon : MonoBehaviour, IPointerClickHandler
     {
         private Keyboard _keyboard;
 
         [Header("References")]
         [SerializeField] private Transform _transform;
-        [SerializeField] private GameManager _gameManager;
+        [SerializeField] private tzdevil.Gameplay.GameManager _gameManager;
+        [SerializeField] protected Alren.GameManager _alrenManager;
         [SerializeField] private Camera _camera;
         [SerializeField] private Renderer _renderer;
         [SerializeField] private MeshFilter _meshFilter;
@@ -32,9 +39,7 @@ namespace tzdevil.Gameplay
 
         [field: Header("Hexagon Settings")]
         [field: SerializeField] public HexagonType HexagonType { get; set; }
-        [SerializeField] private Mesh _mesh;
-        [SerializeField] private Material _material;
-        
+        [SerializeField] private HexagonMeshMaterial _hexagonMeshMaterial;
 
         [Header("Game Loop")]
         [SerializeField] private bool _placed;
@@ -50,18 +55,18 @@ namespace tzdevil.Gameplay
 
         private void Start()
         {
-            _gameManager = GameManager.Instance;
+            _gameManager = tzdevil.Gameplay.GameManager.Instance;
+            _alrenManager = Alren.GameManager.Instance;
 
             _gameManager.OnTryBuyNewHexagon.AddListener(TryBuyNewHexagon);
 
             SendRaycasts();
         }
 
-        public void SetHexagonSettings(HexagonType hexagonType, Mesh mesh, Material material)
+        public void SetHexagonSettings(HexagonType hexagonType, HexagonMeshMaterial hexagonMeshMaterial)
         {
             HexagonType = hexagonType;
-            _mesh = mesh;
-            _material = material;
+            _hexagonMeshMaterial = hexagonMeshMaterial;
         }
 
         private void OnDisable()
@@ -93,8 +98,8 @@ namespace tzdevil.Gameplay
             {
                 _placed = true;
                 _gameManager.OnPlaceNewHexagon?.Invoke(this);
-                _renderer.material = _material;
-                _meshFilter.mesh = _mesh;
+                _meshFilter.mesh = _hexagonMeshMaterial.Mesh;
+                _renderer.materials = _hexagonMeshMaterial.MaterialList;
                 Debug.Log("placed", gameObject);
             }
         }
