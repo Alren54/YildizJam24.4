@@ -1,3 +1,4 @@
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
@@ -8,9 +9,17 @@ namespace tzdevil.Gameplay
     {
         public static GameManager Instance;
 
-        public UnityEvent<HashSet<Vector3>> OnFindBlankPlace;
+        public UnityEvent OnTryBuyNewHexagon;
+        public UnityEvent<HashSet<Vector3>> OnFindBlankHexagon;
+        public UnityEvent<GameObject> OnPlaceNewHexagon;
 
         [SerializeField] private HashSet<Vector3> _blankPlaces;
+        [SerializeField] private int hexagonCount;
+
+        [Header("Game Loop")]
+        [SerializeField] private GameObject _hexagonPrefab;
+        [SerializeField] private List<GameObject> _hexagonList;
+        [SerializeField] private bool _alreadySelecting;
 
         private void Awake()
         {
@@ -21,12 +30,26 @@ namespace tzdevil.Gameplay
 
         private void OnEnable()
         {
-            OnFindBlankPlace.AddListener(FoundBlankPlace);
+            OnFindBlankHexagon.AddListener(FoundBlankPlace);
+            OnPlaceNewHexagon.AddListener(PlacedNewHexagon);
         }
 
         private void OnDisable()
         {
-            OnFindBlankPlace.RemoveListener(FoundBlankPlace);
+            OnFindBlankHexagon.RemoveListener(FoundBlankPlace);
+            OnPlaceNewHexagon.RemoveListener(PlacedNewHexagon);
+        }
+
+        public IEnumerator BuyNewBlock()
+        {
+            _alreadySelecting = true;
+
+            _blankPlaces.Clear();
+            OnTryBuyNewHexagon?.Invoke();
+
+            yield return new WaitForSeconds(.1f);
+
+            ShowAllBlankPlaces();
         }
 
         private void FoundBlankPlace(HashSet<Vector3> blankPlaces)
@@ -35,18 +58,48 @@ namespace tzdevil.Gameplay
                 _blankPlaces.Add(place);
         }
 
+        private void PlacedNewHexagon(GameObject hexagon)
+        {
+            List<GameObject> listToBeRemoved = new();
+            foreach (var place in _hexagonList)
+            {
+                if (place == hexagon)
+                {
+                    listToBeRemoved.Add(place);
+                    continue;
+                }
+
+                place.transform.position = Vector3.one * 999;
+            }
+
+            foreach (var place in listToBeRemoved)
+                _hexagonList.Remove(place);
+
+            _alreadySelecting = false;
+        }
+
         private void Update()
         {
-            if (Input.GetKeyDown(KeyCode.L))
-                ShowAllBlankPlaces();
+            if (Input.GetKeyDown(KeyCode.L) && !_alreadySelecting)
+                StartCoroutine(BuyNewBlock());
         }
 
         private void ShowAllBlankPlaces()
         {
+            int i = 0;
             foreach (var place in _blankPlaces)
             {
-                print(place);
-                Debug.DrawRay(place, Vector3.up, Color.red, 999);
+                if (i <= _hexagonList.Count)
+                {
+                    var hexagon = Instantiate(_hexagonPrefab, place, Quaternion.identity);
+                    _hexagonList.Add(hexagon);
+                }
+                else
+                {
+                    _hexagonList[i].transform.position = place;
+                }
+
+                i++;
             }
         }
     }
