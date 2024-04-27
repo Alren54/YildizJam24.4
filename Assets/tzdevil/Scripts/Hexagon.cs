@@ -29,8 +29,8 @@ namespace tzdevil.Gameplay
         [SerializeField] private int _hexagonLayer = 1 << 6;
         [SerializeField] private HashSet<Vector3> _blankPlaces = new();
 
-        [Header("Hexagon Settings")]
-        [SerializeField] public HexagonType _hexagonType;
+        [field: Header("Hexagon Settings")]
+        [field: SerializeField] public HexagonType HexagonType { get; set; }
         [SerializeField] private Mesh _mesh;
         [SerializeField] private Material _material;
 
@@ -57,7 +57,7 @@ namespace tzdevil.Gameplay
 
         public void SetHexagonSettings(HexagonType hexagonType, Mesh mesh, Material material)
         {
-            _hexagonType = hexagonType;
+            HexagonType = hexagonType;
             _mesh = mesh;
             _material = material;
         }
