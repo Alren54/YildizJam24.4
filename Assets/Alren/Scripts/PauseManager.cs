@@ -7,12 +7,14 @@ public class PauseManager : MonoBehaviour
 {
     private GameManager gameManager;
     [SerializeField] private DisasterTimer disasterTimer;
+    private ResourceGathering resourceGathering;
     [SerializeField] private GameObject HUD;
     [SerializeField] private GameObject mainMenu;
 
     private void Awake()
     {
         gameManager = GetComponent<GameManager>();
+        resourceGathering = GetComponent<ResourceGathering>();
     }
 
     public void StartGame()
