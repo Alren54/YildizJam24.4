@@ -66,7 +66,11 @@ namespace tzdevil.Gameplay
 
             yield return new WaitForSeconds(.1f);
 
-            ShowAllBlankPlaces(elementId);
+            var hexagonType = (HexagonType)elementId;
+            var hexagonMeshMaterial = _hexagonMeshMaterialList[elementId];
+
+            var hexagon = Instantiate(_hexagonPrefab, Vector3.one * 999, Quaternion.identity);
+            hexagon.SetHexagonSettings(hexagonType, hexagonMeshMaterial);
         }
 
         private void FoundBlankPlace(HashSet<Vector3> blankPlaces)
@@ -97,27 +101,27 @@ namespace tzdevil.Gameplay
             _alreadySelecting = false;
         }
 
-        private void ShowAllBlankPlaces(int elementId)
-        {
-            int i = 0;
-            foreach (var place in _blankPlaces)
-            {
-                if (i <= _hexagonList.Count)
-                {
-                    var hexagonType = (HexagonType)elementId;
-                    var hexagonMeshMaterial = _hexagonMeshMaterialList[elementId];
+        //private void ShowAllBlankPlaces(int elementId)
+        //{
+        //    int i = 0;
+        //    foreach (var place in _blankPlaces)
+        //    {
+        //        if (i <= _hexagonList.Count)
+        //        {
+        //            var hexagonType = (HexagonType)elementId;
+        //            var hexagonMeshMaterial = _hexagonMeshMaterialList[elementId];
 
-                    var hexagon = Instantiate(_hexagonPrefab, place, Quaternion.identity);
-                    hexagon.SetHexagonSettings(hexagonType, hexagonMeshMaterial);
-                    _hexagonList.Add(hexagon);
-                }
-                else
-                {
-                    _hexagonList[i].transform.position = place;
-                }
+        //            var hexagon = Instantiate(_hexagonPrefab, place, Quaternion.identity);
+        //            hexagon.SetHexagonSettings(hexagonType, hexagonMeshMaterial);
+        //            _hexagonList.Add(hexagon);
+        //        }
+        //        else
+        //        {
+        //            _hexagonList[i].transform.position = place;
+        //        }
 
-                i++;
-            }
-        }
+        //        i++;
+        //    }
+        //}
     }
 }

@@ -15,7 +15,10 @@ namespace tzdevil.Gameplay
 
     public class Hexagon : MonoBehaviour, IPointerClickHandler
     {
+        private Mouse _mouse;
         private Keyboard _keyboard;
+
+        private const float MOVING_SMOOTHNESS = 60f;
 
         [Header("References")]
         [SerializeField] private Transform _transform;
@@ -43,6 +46,7 @@ namespace tzdevil.Gameplay
 
         [Header("Game Loop")]
         [SerializeField] private bool _placed;
+        [SerializeField] private Vector3 _lastPosition;
 
         private void Awake()
         {
@@ -50,7 +54,14 @@ namespace tzdevil.Gameplay
             _camera = Camera.main;
             _renderer = GetComponent<Renderer>();
 
+            _mouse = Mouse.current;
             _keyboard = Keyboard.current;
+
+            if (!_placed)
+                gameObject.layer = 0;
+
+            print(GetRoundedPosition(new(-1.75f, 0, 2)));
+            print(GetRoundedPosition(new(-1.75f, 0, 2.1f)));
         }
 
         private void Start()
@@ -67,6 +78,9 @@ namespace tzdevil.Gameplay
         {
             HexagonType = hexagonType;
             _hexagonMeshMaterial = hexagonMeshMaterial;
+
+            _meshFilter.mesh = _hexagonMeshMaterial.Mesh;
+            _renderer.materials = _hexagonMeshMaterial.MaterialList;
         }
 
         private void OnDisable()
@@ -98,16 +112,71 @@ namespace tzdevil.Gameplay
             {
                 _placed = true;
                 _gameManager.OnPlaceNewHexagon?.Invoke(this);
-                _meshFilter.mesh = _hexagonMeshMaterial.Mesh;
-                _renderer.materials = _hexagonMeshMaterial.MaterialList;
                 Debug.Log("placed", gameObject);
+
+                gameObject.layer = 6;
             }
         }
 
         private void Update()
         {
-            if (_keyboard.uKey.wasPressedThisFrame)
-                CheckIfItsIsland(_raycastPoses, new());
+            if (!_placed)
+            {
+                var pos = GetRoundedPositionHolding();
+                _transform.position = Vector3.Lerp(_transform.position, pos, MOVING_SMOOTHNESS * Time.deltaTime);
+
+                if (_keyboard.uKey.wasPressedThisFrame)
+                    CheckIfItsIsland(_raycastPoses, new());
+            }
+        }
+
+        private Vector3 GetRoundedPositionHolding()
+        {
+            Ray ray = _camera.ScreenPointToRay(_mouse.position.ReadValue());
+
+            if (Physics.Raycast(ray, out RaycastHit hit, Mathf.Infinity, 1 << 6 | 1 << 7))
+            {
+                Vector3 pointAboveMouse = GetRoundedPosition(hit.point);
+
+                if (Physics.Raycast(pointAboveMouse + Vector3.up * 10, Vector3.down, out RaycastHit hit2, Mathf.Infinity, 1 << 6 | 1 << 7))
+                {
+                    if (hit2.collider.gameObject.layer == 6)
+                        return _lastPosition;
+
+                    Vector3 finalPos = hit2.point;
+
+                    _lastPosition = finalPos;
+
+                    return finalPos;
+                }
+                else
+                    return _lastPosition;
+            }
+            else
+                return _lastPosition;
+        }
+
+        private Vector3 GetRoundedPosition(Vector3 position)
+        {
+            float snappedX = Mathf.Round(position.x / 1.75f) * 1.75f;
+            position.x = snappedX;
+
+            if (snappedX % 3.5f != 0)
+            {
+                int rounded = (int)Mathf.Round(position.z);
+                float snappedZ = rounded % 2 == 0 ? rounded - 1 : rounded;
+                position.z = snappedZ;
+            }
+            else
+            {
+                int rounded = (int)Mathf.Round(position.z);
+                float snappedZ = rounded % 2 == 0 ? rounded : rounded + 1;
+                position.z = snappedZ;
+            }
+
+            position.y = 0;
+
+            return position;
         }
 
         private void CheckIfItsIsland(List<Vector3> raycastPoses, List<GameObject> hexagonToBeRemovedList)

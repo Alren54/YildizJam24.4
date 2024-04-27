@@ -15,7 +15,7 @@ namespace tzdevil.Gameplay
 
         public void SearchAllHexagons()
         {
-            var allHexagons = _alrenManager.AllHexagons.Where(h => h != this).Select(h => h.transform);
+            var allHexagons = FindObjectsByType<Hexagon>(FindObjectsSortMode.None).Where(h => h != this).Select(h => h.transform);
 
             var connectedObjects = FindConnectedObjects(transform);
 

@@ -7,6 +7,12 @@
       "dependencies": {},
       "hash": "a4a0a7c691e10d7af7f2124036e4a16306172319"
     },
+    "com.unity.2d.sprite": {
+      "version": "1.0.0",
+      "depth": 0,
+      "source": "builtin",
+      "dependencies": {}
+    },
     "com.unity.burst": {
       "version": "1.8.12",
       "depth": 1,
