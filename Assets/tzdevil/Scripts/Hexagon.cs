@@ -13,7 +13,7 @@ namespace tzdevil.Gameplay
         [field: SerializeField] public Material[] MaterialList { get; set; }
     }
 
-    public class Hexagon : MonoBehaviour, IPointerClickHandler
+    public class Hexagon : MonoBehaviour/*, IPointerClickHandler*/
     {
         private Mouse _mouse;
         private Keyboard _keyboard;
@@ -21,7 +21,7 @@ namespace tzdevil.Gameplay
         private const float MOVING_SMOOTHNESS = 60f;
 
         [Header("References")]
-        [SerializeField] private Transform _transform;
+        [SerializeField] protected Transform _transform;
         [SerializeField] private tzdevil.Gameplay.GameManager _gameManager;
         [SerializeField] protected Alren.GameManager _alrenManager;
         [SerializeField] private Camera _camera;
@@ -108,9 +108,37 @@ namespace tzdevil.Gameplay
             _gameManager.OnFindBlankHexagon?.Invoke(_blankPlaces);
         }
 
-        public void OnPointerClick(PointerEventData eventData)
+        //public void OnPointerClick(PointerEventData eventData)
+        //{
+        //    if (eventData.button == PointerEventData.InputButton.Left && !_placed)
+        //    {
+        //        var pos = GetRoundedPosition(_transform.position);
+        //        pos.y = 0;
+
+        //        if (!_placesYouCanPlaceHexagon.Contains(pos))
+        //            return;
+
+        //        _placed = true;
+        //        _gameManager.OnPlaceNewHexagon?.Invoke(this);
+        //        Debug.Log("placed", gameObject);
+
+        //        gameObject.layer = 6;
+        //    }
+        //}
+
+        private void Update()
         {
-            if (eventData.button == PointerEventData.InputButton.Left && !_placed)
+            HexagonMovement();
+
+            CheckHexagonPlacement();
+
+            if (_keyboard.uKey.wasPressedThisFrame)
+                CheckIfItsIsland(_raycastPoses, new());
+        }
+
+        private void CheckHexagonPlacement()
+        {
+            if (_mouse.leftButton.wasPressedThisFrame && !_placed)
             {
                 var pos = GetRoundedPosition(_transform.position);
                 pos.y = 0;
@@ -126,15 +154,12 @@ namespace tzdevil.Gameplay
             }
         }
 
-        private void Update()
+        private void HexagonMovement()
         {
             if (!_placed)
             {
                 var pos = GetRoundedPositionHolding();
                 _transform.position = Vector3.Lerp(_transform.position, pos, MOVING_SMOOTHNESS * Time.deltaTime);
-
-                if (_keyboard.uKey.wasPressedThisFrame)
-                    CheckIfItsIsland(_raycastPoses, new());
             }
         }
 
