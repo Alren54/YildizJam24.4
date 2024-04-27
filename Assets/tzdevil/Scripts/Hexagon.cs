@@ -1,11 +1,15 @@
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 using UnityEngine.EventSystems;
+using UnityEngine.InputSystem;
 
 namespace tzdevil.Gameplay
 {
     public class Hexagon : MonoBehaviour, IPointerClickHandler
     {
+        private Keyboard _keyboard;
+
         [Header("References")]
         [SerializeField] private Transform _transform;
         [SerializeField] private GameManager _gameManager;
@@ -15,7 +19,7 @@ namespace tzdevil.Gameplay
 
         [Header("Raycast Settings")]
         [SerializeField]
-        private List<Vector3> _raycastPoses = new() {
+        protected List<Vector3> _raycastPoses = new() {
             new(-1.75f, 0, 1),
             new(0, 0, 2),
             new(1.75f, 0, 1),
@@ -38,6 +42,8 @@ namespace tzdevil.Gameplay
             _transform = transform;
             _camera = Camera.main;
             _renderer = GetComponent<Renderer>();
+
+            _keyboard = Keyboard.current;
         }
 
         private void Start()
@@ -88,6 +94,43 @@ namespace tzdevil.Gameplay
                 _renderer.material = _material;
                 _meshFilter.mesh = _mesh;
                 Debug.Log("placed", gameObject);
+            }
+        }
+
+        private void Update()
+        {
+            if (_keyboard.uKey.wasPressedThisFrame)
+                CheckIfItsIsland(_raycastPoses, new());
+        }
+
+        private void CheckIfItsIsland(List<Vector3> raycastPoses, List<GameObject> hexagonToBeRemovedList)
+        {
+            var tempPos = new List<Vector3>(raycastPoses);
+
+            var hitCount = 0;
+            foreach (var pos in tempPos)
+            {
+                if (Physics.Raycast(_transform.position + pos + Vector3.up, Vector3.down, out RaycastHit hit, Mathf.Infinity, _hexagonLayer))
+                {
+                    if (hit.collider.gameObject.CompareTag("Main"))
+                    {
+                        Debug.Log("h" + hexagonToBeRemovedList.Count, gameObject);
+                        return;
+                    }
+
+                    var removedPos = -pos;
+
+                    hexagonToBeRemovedList.Add(gameObject);
+                    hit.collider.GetComponent<Hexagon>().CheckIfItsIsland(tempPos.Where(p => p != removedPos).ToList(), hexagonToBeRemovedList);
+
+                    hitCount++;
+                }
+            }
+
+            if (hitCount == 0)
+            {
+                Debug.Log(hexagonToBeRemovedList.Count, gameObject);
+                return;
             }
         }
     }
