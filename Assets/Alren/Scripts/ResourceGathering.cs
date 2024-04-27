@@ -5,6 +5,7 @@ using UnityEngine;
 
 public class ResourceGathering : MonoBehaviour
 {
+    [HideInInspector] public bool isGameStarted;
     [SerializeField] private double SandGatherTime = 10;
     [SerializeField] private double StoneGatherTime = 10;
     [SerializeField] private double FoodGatherTime = 10;
@@ -21,68 +22,71 @@ public class ResourceGathering : MonoBehaviour
     void Start()
     {
         SandTimer = StoneTimer = FoodTimer = 0;
-        currentSandGatherTime = SandGatherTime;
-        currentStoneGatherTime = StoneGatherTime;
-        currentFoodGatherTime = FoodGatherTime;
+        currentSandGatherTime = 3;
+        currentStoneGatherTime = 5;
+        currentFoodGatherTime = 3.5;
         gameManager = GetComponent<GameManager>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        isResourceChanged = false;
-        SandTimer += Time.deltaTime;
-        StoneTimer += Time.deltaTime;
-        FoodTimer += Time.deltaTime;
-        if ((int)(100000 * SandTimer) >= (int)(100000 * currentSandGatherTime) && gameManager.res[0].WorkerCount > 0)
+        if (isGameStarted)
         {
-            gameManager.res[0].ResourceCount++;
-            isResourceChanged = true;
-            SandTimer = 0;
-            
-            if (gameManager.res[0].WorkerCount > 0)
+            isResourceChanged = false;
+            SandTimer += Time.deltaTime;
+            StoneTimer += Time.deltaTime;
+            FoodTimer += Time.deltaTime;
+            if ((int)(100000 * SandTimer) >= (int)(100000 * currentSandGatherTime) && gameManager.res[0].WorkerCount > 0)
             {
-                tempTimer = SandGatherTime;
-                tempTimer = 10 * Mathf.Pow(0.9f, gameManager.res[0].WorkerCount);
-                currentSandGatherTime = tempTimer; 
-            }
+                gameManager.res[0].ResourceCount++;
+                isResourceChanged = true;
+                SandTimer = 0;
 
-        }
-        if ((int)(100000 * StoneTimer) >= (int)(100000 * currentStoneGatherTime) && gameManager.res[1].WorkerCount > 0)
-        {
-            gameManager.res[1].ResourceCount++;
-            isResourceChanged = true;
-            StoneTimer = 0;
+                if (gameManager.res[0].WorkerCount > 0)
+                {
+                    tempTimer = SandGatherTime;
+                    tempTimer = 10 * Mathf.Pow(0.9f, gameManager.res[0].WorkerCount);
+                    currentSandGatherTime = tempTimer;
+                }
 
-            if (gameManager.res[1].WorkerCount > 0)
-            {
-                tempTimer = StoneGatherTime;
-                for (int i = 0; i < gameManager.res[1].WorkerCount; i++)
-                {
-                    tempTimer = tempTimer * 9 / 10;
-                }
-                currentStoneGatherTime = tempTimer;
             }
-        }
-        if ((int)(100000 * FoodTimer) >= (int)(100000 * currentFoodGatherTime) && gameManager.res[2].WorkerCount > 0)
-        {
-            gameManager.res[2].ResourceCount++;
-            isResourceChanged = true;
-            FoodTimer = 0;
-            
-            if (gameManager.res[2].WorkerCount > 0)
+            if ((int)(100000 * StoneTimer) >= (int)(100000 * currentStoneGatherTime) && gameManager.res[1].WorkerCount > 0)
             {
-                tempTimer = FoodGatherTime;
-                for (int i = 0; i < gameManager.res[2].WorkerCount; i++)
+                gameManager.res[1].ResourceCount++;
+                isResourceChanged = true;
+                StoneTimer = 0;
+
+                if (gameManager.res[1].WorkerCount > 0)
                 {
-                    tempTimer = tempTimer * 9 / 10;
+                    tempTimer = StoneGatherTime;
+                    for (int i = 0; i < gameManager.res[1].WorkerCount; i++)
+                    {
+                        tempTimer = tempTimer * 9 / 10;
+                    }
+                    currentStoneGatherTime = tempTimer;
                 }
-                currentFoodGatherTime = tempTimer;
             }
-        }
-        if (isResourceChanged)
-        {
-            gameManager.SetResourceCountTexts();
+            if ((int)(100000 * FoodTimer) >= (int)(100000 * currentFoodGatherTime) && gameManager.res[2].WorkerCount > 0)
+            {
+                gameManager.res[2].ResourceCount++;
+                isResourceChanged = true;
+                FoodTimer = 0;
+
+                if (gameManager.res[2].WorkerCount > 0)
+                {
+                    tempTimer = FoodGatherTime;
+                    for (int i = 0; i < gameManager.res[2].WorkerCount; i++)
+                    {
+                        tempTimer = tempTimer * 9 / 10;
+                    }
+                    currentFoodGatherTime = tempTimer;
+                }
+            }
+            if (isResourceChanged)
+            {
+                gameManager.SetResourceCountTexts();
+            }
         }
     }
 }
