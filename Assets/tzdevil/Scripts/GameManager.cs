@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.InputSystem;
@@ -70,7 +71,7 @@ namespace tzdevil.Gameplay
             var hexagonMeshMaterial = _hexagonMeshMaterialList[elementId];
 
             var hexagon = Instantiate(_hexagonPrefab, Vector3.one * 999, Quaternion.identity);
-            hexagon.SetHexagonSettings(hexagonType, hexagonMeshMaterial);
+            hexagon.SetHexagonSettings(hexagonType, hexagonMeshMaterial, _blankPlaces.ToList());
         }
 
         private void FoundBlankPlace(HashSet<Vector3> blankPlaces)

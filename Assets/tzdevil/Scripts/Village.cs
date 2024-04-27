@@ -10,10 +10,10 @@ namespace tzdevil.Gameplay
 
         private void Start()
         {
-            SearchAllHexagons();
+            FindAllIslands();
         }
 
-        public void SearchAllHexagons()
+        public List<Transform> FindAllIslands()
         {
             var allHexagons = FindObjectsByType<Hexagon>(FindObjectsSortMode.None).Where(h => h != this).Select(h => h.transform);
 
@@ -21,10 +21,7 @@ namespace tzdevil.Gameplay
 
             var islandList = allHexagons.Except(connectedObjects).ToList();
 
-            foreach (var obj in islandList)
-            {
-                Debug.Log("island", obj.gameObject);
-            }
+            return islandList.OrderBy(o => Vector3.Magnitude(o.transform.position - _transform.position)).ToList();
         }
 
         private List<Transform> FindConnectedObjects(Transform currentTransform)
