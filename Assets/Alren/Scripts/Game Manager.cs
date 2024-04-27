@@ -86,7 +86,7 @@ namespace Alren
             }
         }
 
-        private void SetResourceCountTexts()
+        public void SetResourceCountTexts()
         {
             int i = 0;
             foreach (var text in resCountTexts)
