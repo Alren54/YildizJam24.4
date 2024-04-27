@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using System.Linq;
+using Unity.Cinemachine;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.InputSystem;
@@ -33,6 +34,7 @@ namespace tzdevil.Gameplay
         [field: SerializeField] public HexagonType HexagonType { get; set; }
         [SerializeField] private Mesh _mesh;
         [SerializeField] private Material _material;
+        
 
         [Header("Game Loop")]
         [SerializeField] private bool _placed;

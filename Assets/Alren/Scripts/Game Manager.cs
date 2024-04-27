@@ -1,9 +1,11 @@
+using DG.Tweening;
 using System.Collections;
-using tzdevil.Gameplay;
 using System.Collections.Generic;
-using UnityEngine;
-using TMPro;
+using System.Linq;
 using System.Text;
+using TMPro;
+using tzdevil.Gameplay;
+using UnityEngine;
 
 namespace Alren
 {
@@ -17,9 +19,7 @@ namespace Alren
         [SerializeField] private List<TextMeshProUGUI> resCountTexts = new();
 
         [SerializeField] private List<TextMeshProUGUI> marketResourceCountTexts = new();
-        [SerializeField] private tzdevil.Gameplay.GameManager tzGameManager = new();
-        [SerializeField] private Hexagon hexagon = new();
-        private HexagonType currentHex = new();
+        [SerializeField] private tzdevil.Gameplay.GameManager tzGameManager;
 
         // Sand 0
         // Stone 1
@@ -36,7 +36,20 @@ namespace Alren
         [SerializeField] private int villagerWorkerCount;
         [SerializeField] private int villagerResourceCount;
 
+        [SerializeField] private List<int> prices;
 
+        [Header("Hexagons")]
+        [HideInInspector] public List<GameObject> allHexagons;
+        [SerializeField] LayerMask _hexagonLayer;
+        private List<GameObject> bayHexagons = new();
+        private List<GameObject> sandHexagons = new();
+        private List<Vector3> _raycastPoses = new() {
+            new(-1.75f, 0, 1),
+            new(0, 0, 2),
+            new(1.75f, 0, 1),
+            new(-1.75f, 0, -1),
+            new(0, 0, -2),
+            new(1.75f, 0, -1)};
         private void Start()
         {
             res[0].WorkerCount = sandWorkerCount;
@@ -49,6 +62,7 @@ namespace Alren
             res[3].ResourceCount = villagerResourceCount;
             SetWorkerTexts();
             SetResourceCountTexts();
+            allHexagons = FindObjectsByType<Hexagon>(FindObjectsSortMode.None).Where(h => h != this).Select(h => h.gameObject).ToList();
         }
 
         public void IncreaseElementCount(int element)
@@ -100,7 +114,7 @@ namespace Alren
                 StringBuilder str = new();
                 str.Append(res[i].ResourceCount.ToString());
                 str.Append('/');
-                str.Append("20");
+                str.Append(prices[i]);
                 text.SetText(str.ToString());
                 i++;
             }
@@ -108,18 +122,78 @@ namespace Alren
 
         public void BuyHexagon(int element)
         {
-            if (res[element].ResourceCount >= 20)
+            if (res[element].ResourceCount >= prices[element])
             {
-                res[element].ResourceCount -= 20;
+                res[element].ResourceCount -= prices[element];
                 StartCoroutine(tzGameManager.BuyNewBlock(element));
                 SetResourceCountTexts();
             }
         }
 
-        public void StartDisaster()
+        public GameObject GatherBay()
         {
+            bayHexagons.Clear();
+            foreach (var hexagon in allHexagons)
+            {
+                foreach (var pos in _raycastPoses)
+                {
+                    if (!Physics.Raycast(hexagon.transform.position + pos + new Vector3(0, 10, 0), Vector3.down, out RaycastHit hit, Mathf.Infinity, _hexagonLayer))
+                    {
+                        bayHexagons.Add(hexagon);
+                        print("Kenar Hexa sec");
+                        break;
+                    }
+                }
+            }
+            return bayHexagons[Random.Range(0, bayHexagons.Count)]; //Select Bay
+        }
 
+        public GameObject GatherSandTiles(GameObject hexagon)
+        {
+            sandHexagons.Clear();
+            foreach (var pos in _raycastPoses)
+            {
+                if (Physics.Raycast(hexagon.transform.position + pos + new Vector3(0, 10, 0), Vector3.down, out RaycastHit hit, Mathf.Infinity, _hexagonLayer))
+                {
+                    sandHexagons.Add(hit.collider.gameObject);
+                    print("Kum Hexa sec");
+                }
+            }
+            if (sandHexagons.Count > 0)
+            {
+                return sandHexagons[Random.Range(0, sandHexagons.Count)];
+            }
+            return null;
+        }
+
+        public IEnumerator StartDisaster(GameObject mainHex)
+        {
+            print("Felaket Basliyor");
+
+            mainHex.transform.DOScaleY(0, .5f).SetEase(Ease.InCubic);
+
+            yield return new WaitForSeconds(.51f);
+
+            print("Felaketin ilki bitti");
+
+            allHexagons.Remove(mainHex);
+
+            HexagonType destroyedHexType = mainHex.GetComponent<Hexagon>().HexagonType;
+
+            var alternativeHex = GatherSandTiles(mainHex);
+
+            Destroy(mainHex);
+
+            if (destroyedHexType == HexagonType.Sand && alternativeHex != null)
+            {
+                alternativeHex.transform.DOScaleY(0, .5f).SetEase(Ease.InCubic);
+
+                yield return new WaitForSeconds(.51f);
+
+                print("Felaketin ikimcisi bitti");
+                allHexagons.Remove(alternativeHex);
+                Destroy(alternativeHex);
+            }
         }
     }
-
 }

@@ -22,6 +22,7 @@ public class PauseManager : MonoBehaviour
         HUD.SetActive(true);
         mainMenu.SetActive(false);
         disasterTimer.timerStarted = true;
+        resourceGathering.isGameStarted = true;
     }
 
     public void QuitGame()

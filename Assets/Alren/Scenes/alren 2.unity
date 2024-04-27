@@ -515,7 +515,7 @@ MonoBehaviour:
   - {x: 0, y: 0, z: -2}
   - {x: 1.75, y: 0, z: -1}
   _hexagonLayer: 64
-  _hexagonType: 0
+  <HexagonType>k__BackingField: 0
   _mesh: {fileID: 0}
   _material: {fileID: 0}
   _placed: 1
@@ -957,7 +957,7 @@ MonoBehaviour:
   - {x: 0, y: 0, z: -2}
   - {x: 1.75, y: 0, z: -1}
   _hexagonLayer: 64
-  _hexagonType: 0
+  <HexagonType>k__BackingField: 0
   _mesh: {fileID: 0}
   _material: {fileID: 0}
   _placed: 1
@@ -1048,19 +1048,13 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &924002485 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1417395725519817228, guid: a772c3298412c3445af5573f60f40fa9,
-    type: 3}
-  m_PrefabInstance: {fileID: 3131397444721854939}
-  m_PrefabAsset: {fileID: 0}
 --- !u!114 &924002492
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 924002485}
+  m_GameObject: {fileID: 4098113506613806039}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 6717b0415b75b794abf4a025054e6022, type: 3}
@@ -1079,7 +1073,7 @@ MonoBehaviour:
   - {x: 0, y: 0, z: -2}
   - {x: 1.75, y: 0, z: -1}
   _hexagonLayer: 64
-  _hexagonType: 0
+  <HexagonType>k__BackingField: 0
   _mesh: {fileID: 0}
   _material: {fileID: 0}
   _placed: 0
@@ -1772,6 +1766,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 876f31e3a25805d428f39dae3f9c0ef0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _alrenGameManager: {fileID: 5188924397658491525}
   OnTryBuyNewHexagon:
     m_PersistentCalls:
       m_Calls: []
@@ -1875,7 +1870,7 @@ MonoBehaviour:
   - {x: 0, y: 0, z: -2}
   - {x: 1.75, y: 0, z: -1}
   _hexagonLayer: 64
-  _hexagonType: 0
+  <HexagonType>k__BackingField: 0
   _mesh: {fileID: 0}
   _material: {fileID: 0}
   _placed: 1
@@ -3519,89 +3514,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!1001 &3131397444721854939
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 1417395725519817228, guid: a772c3298412c3445af5573f60f40fa9,
-        type: 3}
-      propertyPath: m_Name
-      value: Hexagon
-      objectReference: {fileID: 0}
-    - target: {fileID: 1417395725519817228, guid: a772c3298412c3445af5573f60f40fa9,
-        type: 3}
-      propertyPath: m_TagString
-      value: Main
-      objectReference: {fileID: 0}
-    - target: {fileID: 1807968971048802395, guid: a772c3298412c3445af5573f60f40fa9,
-        type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1807968971048802395, guid: a772c3298412c3445af5573f60f40fa9,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1807968971048802395, guid: a772c3298412c3445af5573f60f40fa9,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1807968971048802395, guid: a772c3298412c3445af5573f60f40fa9,
-        type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 0.9999807
-      objectReference: {fileID: 0}
-    - target: {fileID: 1807968971048802395, guid: a772c3298412c3445af5573f60f40fa9,
-        type: 3}
-      propertyPath: m_LocalRotation.x
-      value: -0.00088346406
-      objectReference: {fileID: 0}
-    - target: {fileID: 1807968971048802395, guid: a772c3298412c3445af5573f60f40fa9,
-        type: 3}
-      propertyPath: m_LocalRotation.y
-      value: -0.0059701526
-      objectReference: {fileID: 0}
-    - target: {fileID: 1807968971048802395, guid: a772c3298412c3445af5573f60f40fa9,
-        type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0.0014779498
-      objectReference: {fileID: 0}
-    - target: {fileID: 1807968971048802395, guid: a772c3298412c3445af5573f60f40fa9,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: -0.1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1807968971048802395, guid: a772c3298412c3445af5573f60f40fa9,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: -0.684
-      objectReference: {fileID: 0}
-    - target: {fileID: 1807968971048802395, guid: a772c3298412c3445af5573f60f40fa9,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0.17
-      objectReference: {fileID: 0}
-    - target: {fileID: 7376725360666682536, guid: a772c3298412c3445af5573f60f40fa9,
-        type: 3}
-      propertyPath: _placed
-      value: 1
-      objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 7376725360666682536, guid: a772c3298412c3445af5573f60f40fa9, type: 3}
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 1417395725519817228, guid: a772c3298412c3445af5573f60f40fa9,
-        type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 924002492}
-  m_SourcePrefab: {fileID: 100100000, guid: a772c3298412c3445af5573f60f40fa9, type: 3}
 --- !u!114 &3182378424809130172
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3910,7 +3822,7 @@ MonoBehaviour:
   - {x: 0, y: 0, z: -2}
   - {x: 1.75, y: 0, z: -1}
   _hexagonLayer: 64
-  _hexagonType: 0
+  <HexagonType>k__BackingField: 0
   _mesh: {fileID: 0}
   _material: {fileID: 0}
   _placed: 1
@@ -3991,7 +3903,7 @@ MonoBehaviour:
   - {x: 0, y: 0, z: -2}
   - {x: 1.75, y: 0, z: -1}
   _hexagonLayer: 64
-  _hexagonType: 0
+  <HexagonType>k__BackingField: 0
   _mesh: {fileID: 0}
   _material: {fileID: 0}
   _placed: 1
@@ -4072,7 +3984,7 @@ MonoBehaviour:
   - {x: 0, y: 0, z: -2}
   - {x: 1.75, y: 0, z: -1}
   _hexagonLayer: 64
-  _hexagonType: 0
+  <HexagonType>k__BackingField: 0
   _mesh: {fileID: 0}
   _material: {fileID: 0}
   _placed: 1
@@ -4153,7 +4065,7 @@ MonoBehaviour:
   - {x: 0, y: 0, z: -2}
   - {x: 1.75, y: 0, z: -1}
   _hexagonLayer: 64
-  _hexagonType: 0
+  <HexagonType>k__BackingField: 0
   _mesh: {fileID: 0}
   _material: {fileID: 0}
   _placed: 1
@@ -4234,7 +4146,7 @@ MonoBehaviour:
   - {x: 0, y: 0, z: -2}
   - {x: 1.75, y: 0, z: -1}
   _hexagonLayer: 64
-  _hexagonType: 0
+  <HexagonType>k__BackingField: 0
   _mesh: {fileID: 0}
   _material: {fileID: 0}
   _placed: 1
@@ -4315,7 +4227,7 @@ MonoBehaviour:
   - {x: 0, y: 0, z: -2}
   - {x: 1.75, y: 0, z: -1}
   _hexagonLayer: 64
-  _hexagonType: 0
+  <HexagonType>k__BackingField: 0
   _mesh: {fileID: 0}
   _material: {fileID: 0}
   _placed: 1
@@ -4507,6 +4419,21 @@ MonoBehaviour:
   m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!4 &3630964878174097792
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4098113506613806039}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0.00088346406, y: -0.0059701526, z: 0.0014779498, w: 0.9999807}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: -0.1, y: -0.684, z: 0.17}
 --- !u!114 &3655147574928905032
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4953,6 +4880,27 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
+--- !u!1 &4098113506613806039
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3630964878174097792}
+  - component: {fileID: 6347243093212177221}
+  - component: {fileID: 5589595770911331203}
+  - component: {fileID: 6682974146834046288}
+  - component: {fileID: 5051862084127184863}
+  - component: {fileID: 924002492}
+  m_Layer: 6
+  m_Name: Hexagon
+  m_TagString: Main
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
 --- !u!224 &4118992301880185432
 RectTransform:
   m_ObjectHideFlags: 0
@@ -5231,6 +5179,28 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 9040987601447378779}
   m_CullTransparentMesh: 1
+--- !u!64 &5051862084127184863
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4098113506613806039}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -4575734979276873811, guid: 5a6c3e9830b1da54683265d9577f43fe, type: 3}
 --- !u!4 &5065791458675227381
 Transform:
   m_ObjectHideFlags: 0
@@ -5379,7 +5349,6 @@ MonoBehaviour:
   - {fileID: 2532071855401098720}
   - {fileID: 3655147574928905032}
   tzGameManager: {fileID: 1982304843}
-  hexagon: {fileID: 0}
   sandWorkerCount: 20
   sandResourceCount: 300
   stoneWorkerCount: 25
@@ -5388,6 +5357,11 @@ MonoBehaviour:
   foodResourceCount: 200
   villagerWorkerCount: 35
   villagerResourceCount: 100
+  prices: 0f00000014000000
+  allHexagons: []
+  _hexagonLayer:
+    serializedVersion: 2
+    m_Bits: 64
 --- !u!224 &5297405255607697312
 RectTransform:
   m_ObjectHideFlags: 0
@@ -5478,6 +5452,28 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!64 &5589595770911331203
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4098113506613806039}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -4575734979276873811, guid: 5a6c3e9830b1da54683265d9577f43fe, type: 3}
 --- !u!1 &5592536010911792301
 GameObject:
   m_ObjectHideFlags: 0
@@ -5760,6 +5756,14 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!33 &6347243093212177221
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4098113506613806039}
+  m_Mesh: {fileID: -4575734979276873811, guid: 5a6c3e9830b1da54683265d9577f43fe, type: 3}
 --- !u!1 &6384590342125874950
 GameObject:
   m_ObjectHideFlags: 0
@@ -5994,6 +5998,48 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!23 &6682974146834046288
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4098113506613806039}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 2100000, guid: b923661f347eedb4280691c080ea2221, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_AdditionalVertexStreams: {fileID: 0}
 --- !u!1 &6703276782036111476
 GameObject:
   m_ObjectHideFlags: 0
@@ -6733,6 +6779,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: edf8c2e998db369448f04e50ec577fb4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isGameStarted: 0
+  SandGatherTime: 10
+  StoneGatherTime: 10
+  FoodGatherTime: 10
 --- !u!1 &8144821662655994944
 GameObject:
   m_ObjectHideFlags: 0
@@ -7227,7 +7277,7 @@ SceneRoots:
   - {fileID: 379206367}
   - {fileID: 1893171466}
   - {fileID: 1599859066}
-  - {fileID: 3131397444721854939}
+  - {fileID: 3630964878174097792}
   - {fileID: 543450652036216026}
   - {fileID: 543450652026060041}
   - {fileID: 874840260}

@@ -13,6 +13,9 @@ namespace tzdevil.Gameplay
 
         public static GameManager Instance;
 
+        [Header("References")]
+        [SerializeField] private Alren.GameManager _alrenGameManager;
+
         public UnityEvent OnTryBuyNewHexagon;
         public UnityEvent<HashSet<Vector3>> OnFindBlankHexagon;
         public UnityEvent<Hexagon> OnPlaceNewHexagon;
@@ -54,6 +57,9 @@ namespace tzdevil.Gameplay
 
         public IEnumerator BuyNewBlock(int elementId)
         {
+            if (_alreadySelecting)
+                yield break;
+
             _alreadySelecting = true;
 
             _blankPlaces.Clear();
@@ -86,6 +92,8 @@ namespace tzdevil.Gameplay
 
             foreach (var place in listToBeRemoved)
                 _hexagonList.Remove(place);
+
+            _alrenGameManager.allHexagons.Add(hexagon.gameObject);
 
             _alreadySelecting = false;
         }

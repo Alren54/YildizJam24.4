@@ -1,8 +1,8 @@
 using Alren;
 using DG.Tweening;
+using System;
 using System.Collections;
 using System.Collections.Generic;
-using System.Drawing;
 using UnityEngine;
 
 namespace Alren
@@ -10,10 +10,12 @@ namespace Alren
     public class DisasterTimer : MonoBehaviour
     {
         [HideInInspector] public bool timerStarted;
+        private bool isFirstTimer;
         [SerializeField] private GameObject timerProgressBar;
         [SerializeField] private float timerLimit = 20;
         [SerializeField] private GameManager gameManager;
         private float timer;
+        private GameObject selectedBay;
         // Start is called before the first frame update
         private void Awake()
         {
@@ -22,6 +24,7 @@ namespace Alren
         void Start()
         {
             timer = 0;
+            isFirstTimer = true;
         }
 
         // Update is called once per frame
@@ -36,12 +39,32 @@ namespace Alren
                 else if ((int)timer == (int)timerLimit)
                 {
                     timer = 0;
-                    gameManager.StartDisaster();
+                    PickVictim();
                 }
                 timer += Time.deltaTime;
                 timerProgressBar.GetComponent<RectTransform>().localScale = new Vector3(timer / timerLimit, 1, 1);
             }
 
+        }
+        void PickVictim()
+        {
+            selectedBay = gameManager.GatherBay();
+            StartCoroutine(StartDisasterTimer());
+        }
+
+        public IEnumerator StartDisasterTimer()
+        {
+            print("Felaketin kime yapilcagi belli");
+            GameObject victimBay = selectedBay;
+            victimBay.GetComponent<Renderer>().material.color = Color.black;
+
+            yield return new WaitForSeconds(victimBay.GetComponent<tzdevil.Gameplay.Hexagon>().HexagonType switch
+            {
+                HexagonType.Sand => 0f,
+                HexagonType.Stone => 0f,
+                _ => throw new Exception("Kaç saniye beklicem bu cisim ne")
+            });
+            StartCoroutine(gameManager.StartDisaster(victimBay));
         }
     }
 }

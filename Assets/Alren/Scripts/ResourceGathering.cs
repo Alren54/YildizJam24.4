@@ -26,6 +26,7 @@ public class ResourceGathering : MonoBehaviour
         currentStoneGatherTime = 5;
         currentFoodGatherTime = 3.5;
         gameManager = GetComponent<GameManager>();
+        isGameStarted = false;
     }
 
     // Update is called once per frame
