@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: Food
   m_EditorClassIdentifier: 
   ID: 2
-  AvailableCount: 0
+  AvailableCount: 25
   Name: Food
   Description: To gather more villagers
