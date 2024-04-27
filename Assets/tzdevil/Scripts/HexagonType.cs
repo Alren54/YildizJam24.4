@@ -1,5 +1,5 @@
 public enum HexagonType
 {
-    Wood,
+    Sand,
     Stone
 }

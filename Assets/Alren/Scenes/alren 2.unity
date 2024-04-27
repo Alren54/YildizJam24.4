@@ -4837,6 +4837,8 @@ MonoBehaviour:
   marketResourceCountTexts:
   - {fileID: 2532071855401098720}
   - {fileID: 3655147574928905032}
+  tzGameManager: {fileID: 1982304843}
+  hexagon: {fileID: 0}
   sandWorkerCount: 20
   sandResourceCount: 300
   stoneWorkerCount: 25
@@ -5228,6 +5230,7 @@ GameObject:
   - component: {fileID: 3705837120475014547}
   - component: {fileID: 5188924397658491525}
   - component: {fileID: 8138478481093362780}
+  - component: {fileID: 8138478481093362781}
   m_Layer: 0
   m_Name: Game Manager
   m_TagString: Untagged
@@ -6177,6 +6180,18 @@ MonoBehaviour:
   disasterTimer: {fileID: 5457175425887963444}
   HUD: {fileID: 9040987601447378779}
   mainMenu: {fileID: 8144821662655994944}
+--- !u!114 &8138478481093362781
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6384590342125874950}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: edf8c2e998db369448f04e50ec577fb4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &8144821662655994944
 GameObject:
   m_ObjectHideFlags: 0
@@ -6194,7 +6209,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!222 &8224476810892304456
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -6634,7 +6649,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!222 &9048720533077846348
 CanvasRenderer:
   m_ObjectHideFlags: 0

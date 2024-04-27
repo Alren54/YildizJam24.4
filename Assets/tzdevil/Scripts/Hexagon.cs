@@ -25,7 +25,7 @@ namespace tzdevil.Gameplay
         [SerializeField] private HashSet<Vector3> _blankPlaces = new();
 
         [Header("Hexagon Settings")]
-        [SerializeField] private HexagonType _hexagonType;
+        [SerializeField] public HexagonType _hexagonType;
         [SerializeField] private Material _material;
 
         [Header("Game Loop")]

@@ -1,4 +1,5 @@
 using System.Collections;
+using tzdevil.Gameplay;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
@@ -16,6 +17,9 @@ namespace Alren
         [SerializeField] private List<TextMeshProUGUI> resCountTexts = new();
 
         [SerializeField] private List<TextMeshProUGUI> marketResourceCountTexts = new();
+        [SerializeField] private tzdevil.Gameplay.GameManager tzGameManager = new();
+        [SerializeField] private Hexagon hexagon = new();
+        private HexagonType currentHex = new();
 
         // Sand 0
         // Stone 1
@@ -102,9 +106,14 @@ namespace Alren
             }
         }
 
-        public void BuyHexagon(int element){ 
-            if(res[element].ResourceCount >= 20) res[element].ResourceCount -= 20;
-            SetResourceCountTexts();
+        public void BuyHexagon(int element){
+            if (res[element].ResourceCount >= 20)
+            {
+                res[element].ResourceCount -= 20;
+                StartCoroutine(tzGameManager.BuyNewBlock());
+                SetResourceCountTexts();
+            }
+
         }
 
         public void StartDisaster()
