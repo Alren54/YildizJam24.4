@@ -2,11 +2,15 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.InputSystem;
 
 namespace tzdevil.Gameplay
 {
     public class GameManager : MonoBehaviour
     {
+        private Mouse _mouse;
+        private Keyboard _keyboard;
+
         public static GameManager Instance;
 
         public UnityEvent OnTryBuyNewHexagon;
@@ -26,6 +30,9 @@ namespace tzdevil.Gameplay
             Instance = this;
 
             _blankPlaces = new();
+
+            _mouse = Mouse.current;
+            _keyboard = Keyboard.current;
         }
 
         private void OnEnable()
@@ -80,7 +87,7 @@ namespace tzdevil.Gameplay
 
         private void Update()
         {
-            if (Input.GetKeyDown(KeyCode.L) && !_alreadySelecting)
+            if (_keyboard.lKey.wasPressedThisFrame && !_alreadySelecting)
                 StartCoroutine(BuyNewBlock());
         }
 

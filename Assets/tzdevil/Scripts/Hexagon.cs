@@ -14,21 +14,22 @@ namespace tzdevil.Gameplay
 
         [Header("Raycast Settings")]
         [SerializeField]
-        private List<Vector3> _raycastPoses = new()
-    {
-        new(-1.75f, 0, 1),
-        new(0, 0, 2),
-        new(1.75f, 0, 1),
-        new(-1.75f, 0, -1),
-        new(0, 0, -2),
-        new(1.75f, 0, -1)
-    };
+        private List<Vector3> _raycastPoses = new() {
+            new(-1.75f, 0, 1),
+            new(0, 0, 2),
+            new(1.75f, 0, 1),
+            new(-1.75f, 0, -1),
+            new(0, 0, -2),
+            new(1.75f, 0, -1)};
         [SerializeField] private int _hexagonLayer = 1 << 6;
         [SerializeField] private HashSet<Vector3> _blankPlaces = new();
 
+        [Header("Hexagon Settings")]
+        [SerializeField] private HexagonType _hexagonType;
+        [SerializeField] private Material _material;
+
         [Header("Game Loop")]
         [SerializeField] private bool _placed;
-        [SerializeField] private Material _blueMaterial;
 
         private void Awake()
         {
@@ -44,6 +45,12 @@ namespace tzdevil.Gameplay
             _gameManager.OnTryBuyNewHexagon.AddListener(TryBuyNewHexagon);
 
             SendRaycasts();
+        }
+
+        public void SetHexagonSettings(HexagonType hexagonType, Material material)
+        {
+            _hexagonType = hexagonType;
+            _material = material;
         }
 
         private void OnDisable()
@@ -75,7 +82,7 @@ namespace tzdevil.Gameplay
             {
                 _placed = true;
                 _gameManager.OnPlaceNewHexagon?.Invoke(gameObject);
-                _renderer.material = _blueMaterial;
+                _renderer.material = _material;
             }
         }
     }

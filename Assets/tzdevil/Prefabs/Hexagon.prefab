@@ -123,6 +123,7 @@ MonoBehaviour:
   _transform: {fileID: 0}
   _gameManager: {fileID: 0}
   _camera: {fileID: 0}
+  _renderer: {fileID: 0}
   _raycastPoses:
   - {x: -1.75, y: 0, z: 1}
   - {x: 0, y: 0, z: 2}
@@ -131,8 +132,9 @@ MonoBehaviour:
   - {x: 0, y: 0, z: -2}
   - {x: 1.75, y: 0, z: -1}
   _hexagonLayer: 64
+  _hexagonType: 0
+  _material: {fileID: 2100000, guid: df0f2efc606a64642a13f7d0fab0c557, type: 2}
   _placed: 0
-  _blueMaterial: {fileID: 2100000, guid: df0f2efc606a64642a13f7d0fab0c557, type: 2}
 --- !u!64 &7885561802922925572
 MeshCollider:
   m_ObjectHideFlags: 0
