@@ -5,16 +5,16 @@ using UnityEngine;
 
 public class ResourceGathering : MonoBehaviour
 {
-    [SerializeField] private readonly float SandGatherTime = 10;
-    [SerializeField] private readonly float StoneGatherTime = 10;
-    [SerializeField] private readonly float FoodGatherTime = 10;
-    private float currentSandGatherTime;
-    private float currentStoneGatherTime;
-    private float currentFoodGatherTime;
-    private float SandTimer;
-    private float StoneTimer;
-    private float FoodTimer;
-    private float tempTimer;
+    [SerializeField] private double SandGatherTime = 10;
+    [SerializeField] private double StoneGatherTime = 10;
+    [SerializeField] private double FoodGatherTime = 10;
+    private double currentSandGatherTime;
+    private double currentStoneGatherTime;
+    private double currentFoodGatherTime;
+    private double SandTimer;
+    private double StoneTimer;
+    private double FoodTimer;
+    private double tempTimer;
     private bool isResourceChanged;
     private GameManager gameManager;
     // Start is called before the first frame update
@@ -31,12 +31,15 @@ public class ResourceGathering : MonoBehaviour
     void Update()
     {
         isResourceChanged = false;
-        SandTimer = StoneTimer = FoodTimer += Time.deltaTime;
+        SandTimer += Time.deltaTime;
+        StoneTimer += Time.deltaTime;
+        FoodTimer += Time.deltaTime;
         if ((int)(10 * SandTimer) >= (int)(10 * currentSandGatherTime) && gameManager.res[0].WorkerCount > 0)
         {
             gameManager.res[0].ResourceCount++;
             isResourceChanged = true;
-
+            SandTimer = 0;
+            
             if (gameManager.res[0].WorkerCount > 0)
             {
                 tempTimer = SandGatherTime;
@@ -44,7 +47,7 @@ public class ResourceGathering : MonoBehaviour
                 {
                     tempTimer = tempTimer * 9 / 10;
                 }
-                currentSandGatherTime = tempTimer;
+                currentSandGatherTime = tempTimer; 
             }
 
         }
@@ -52,6 +55,7 @@ public class ResourceGathering : MonoBehaviour
         {
             gameManager.res[1].ResourceCount++;
             isResourceChanged = true;
+            StoneTimer = 0;
 
             if (gameManager.res[1].WorkerCount > 0)
             {
@@ -67,7 +71,8 @@ public class ResourceGathering : MonoBehaviour
         {
             gameManager.res[2].ResourceCount++;
             isResourceChanged = true;
-
+            FoodTimer = 0;
+            
             if (gameManager.res[2].WorkerCount > 0)
             {
                 tempTimer = FoodGatherTime;
