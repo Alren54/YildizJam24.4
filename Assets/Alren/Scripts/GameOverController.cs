@@ -11,7 +11,6 @@ public class GameOverController : MonoBehaviour
     {
         GameOverPanel.SetActive(true);
         Time.timeScale = 0f;
-
     }
 
     public void PlayAgainButton()
