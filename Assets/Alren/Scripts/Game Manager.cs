@@ -14,6 +14,7 @@ namespace Alren
     {
         public static Alren.GameManager Instance;
         private Keyboard _keyboard;
+        private GameOverController gameOverController;
         [Header("Resources and UI Relatives")]
         public List<Resource> res = new();
         [SerializeField] private List<TextMeshProUGUI> changeWorkerCountTexts = new();
@@ -74,7 +75,7 @@ namespace Alren
             res[3].ResourceCount = villagerResourceCount;
             SetWorkerTexts();
             SetResourceCountTexts();
-            
+            gameOverController = GetComponent<GameOverController>();
         }
 
         private void Update()
@@ -209,7 +210,7 @@ namespace Alren
 
             mainHex.transform.DOScaleY(0, .5f).SetEase(Ease.InCubic);
 
-            yield return new WaitForSeconds(.51f);
+            yield return new WaitForSeconds(.54f);
 
             print("Felaketin ilki bitti");
 
@@ -219,17 +220,30 @@ namespace Alren
 
             var alternativeHex = GatherSandTiles(mainHex);
 
+            if (mainHex.GetComponent<Hexagon>() is Village or Building)
+            {
+                print("Game over!");
+                gameOverController.CheckIfAllBuildingsAlive();
+            }
             Destroy(mainHex);
 
             if (destroyedHexType == HexagonType.Sand && alternativeHex != null)
             {
                 alternativeHex.transform.DOScaleY(0, .5f).SetEase(Ease.InCubic);
 
-                yield return new WaitForSeconds(.51f);
+                yield return new WaitForSeconds(.54f);
 
                 print("Felaketin ikimcisi bitti");
                 AllHexagons.Remove(alternativeHex);
+                if (alternativeHex.GetComponent<Hexagon>() is Village or Building)
+                {
+                    print("Game over!");
+                    gameOverController.CheckIfAllBuildingsAlive();
+                }
+                
                 Destroy(alternativeHex);
+                print("Bina yikildi");
+                
             }
         }
     }
