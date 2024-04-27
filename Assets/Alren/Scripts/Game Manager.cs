@@ -139,6 +139,17 @@ namespace Alren
             }
         }
 
+        public void BuyVillager()
+        {
+            if (res[2].ResourceCount >= prices[2])
+            {
+                res[2].ResourceCount -= prices[2];
+                res[3].WorkerCount++;
+                SetResourceCountTexts();
+                SetWorkerTexts();
+            }
+        }
+
         public GameObject GatherBay()
         {
             bayHexagons.Clear();
