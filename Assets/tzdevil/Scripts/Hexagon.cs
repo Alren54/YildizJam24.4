@@ -1,7 +1,6 @@
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
-using UnityEngine.EventSystems;
 using UnityEngine.InputSystem;
 
 namespace tzdevil.Gameplay
@@ -50,6 +49,7 @@ namespace tzdevil.Gameplay
         [Header("Game Loop")]
         [SerializeField] private bool _placed;
         [SerializeField] private Vector3 _lastPosition;
+        [SerializeField] private RaycastHit[] _results;
 
         private void Awake()
         {
@@ -62,6 +62,8 @@ namespace tzdevil.Gameplay
 
             if (!_placed)
                 gameObject.layer = 0;
+
+            _results = new RaycastHit[6];
         }
 
         private void Start()
@@ -171,10 +173,22 @@ namespace tzdevil.Gameplay
             {
                 Vector3 pointAboveMouse = GetRoundedPosition(hit.point);
 
-                if (!_placesYouCanPlaceHexagon.Contains(pointAboveMouse))
+                var count = 0;
+                foreach (var pos in _raycastPoses)
+                {
+                    if (Physics.RaycastNonAlloc(pointAboveMouse + pos + Vector3.up * 10, Vector3.down, _results, Mathf.Infinity, 1 << 6) > 0)
+                        count++;
+
+                    print("alo");
+
+                    Debug.DrawRay(pointAboveMouse + pos + Vector3.up, Vector3.down, Color.yellow, 100f);
+                }
+
+                if (count == 0)
                 {
                     print("You can't place the hexagon here!");
                 }
+
                 if (Physics.Raycast(pointAboveMouse + Vector3.up * 10, Vector3.down, out RaycastHit hit2, Mathf.Infinity, 1 << 6 | 1 << 7))
                 {
                     if (hit2.collider.gameObject.layer == 6)
