@@ -193,8 +193,11 @@ namespace Alren
             {
                 if (Physics.Raycast(hexagon.transform.position + pos + new Vector3(0, 10, 0), Vector3.down, out RaycastHit hit, Mathf.Infinity, _hexagonLayer))
                 {
-                    sandHexagons.Add(hit.collider.gameObject);
-                    print("Kum Hexa sec");
+                    if (hit.collider.GetComponent<Hexagon>().HexagonType == HexagonType.Sand)
+                    {
+                        sandHexagons.Add(hit.collider.gameObject);
+                        print("Kum Hexa sec");
+                    }
                 }
             }
             if (sandHexagons.Count > 0)
@@ -240,10 +243,10 @@ namespace Alren
                     print("Game over!");
                     gameOverController.CheckIfAllBuildingsAlive();
                 }
-                
+
                 Destroy(alternativeHex);
                 print("Bina yikildi");
-                
+
             }
         }
     }
