@@ -197,7 +197,7 @@ MonoBehaviour:
   _hexagonMeshMaterial:
     <Mesh>k__BackingField: {fileID: 0}
     <MaterialList>k__BackingField: []
-  _placed: 1
+  <Placed>k__BackingField: 0
   _lastPosition: {x: 0, y: 0, z: 0}
 --- !u!23 &42446137
 MeshRenderer:
@@ -360,7 +360,7 @@ MonoBehaviour:
   _hexagonMeshMaterial:
     <Mesh>k__BackingField: {fileID: 0}
     <MaterialList>k__BackingField: []
-  _placed: 1
+  <Placed>k__BackingField: 0
   _lastPosition: {x: 0, y: 0, z: 0}
 --- !u!23 &107658680
 MeshRenderer:
@@ -579,7 +579,7 @@ MonoBehaviour:
   _hexagonMeshMaterial:
     <Mesh>k__BackingField: {fileID: 0}
     <MaterialList>k__BackingField: []
-  _placed: 1
+  <Placed>k__BackingField: 0
   _lastPosition: {x: 0, y: 0, z: 0}
 --- !u!23 &205585292
 MeshRenderer:
@@ -742,7 +742,7 @@ MonoBehaviour:
   _hexagonMeshMaterial:
     <Mesh>k__BackingField: {fileID: 0}
     <MaterialList>k__BackingField: []
-  _placed: 1
+  <Placed>k__BackingField: 0
   _lastPosition: {x: 0, y: 0, z: 0}
 --- !u!23 &231445427
 MeshRenderer:
@@ -905,7 +905,7 @@ MonoBehaviour:
   _hexagonMeshMaterial:
     <Mesh>k__BackingField: {fileID: 0}
     <MaterialList>k__BackingField: []
-  _placed: 1
+  <Placed>k__BackingField: 0
   _lastPosition: {x: 0, y: 0, z: 0}
 --- !u!23 &295150828
 MeshRenderer:
@@ -1068,7 +1068,7 @@ MonoBehaviour:
   _hexagonMeshMaterial:
     <Mesh>k__BackingField: {fileID: 0}
     <MaterialList>k__BackingField: []
-  _placed: 1
+  <Placed>k__BackingField: 0
   _lastPosition: {x: 0, y: 0, z: 0}
 --- !u!23 &304630421
 MeshRenderer:
@@ -1262,7 +1262,7 @@ MonoBehaviour:
   _hexagonMeshMaterial:
     <Mesh>k__BackingField: {fileID: 0}
     <MaterialList>k__BackingField: []
-  _placed: 1
+  <Placed>k__BackingField: 0
   _lastPosition: {x: 0, y: 0, z: 0}
 --- !u!23 &322895433
 MeshRenderer:
@@ -1513,7 +1513,7 @@ MonoBehaviour:
   _hexagonMeshMaterial:
     <Mesh>k__BackingField: {fileID: 0}
     <MaterialList>k__BackingField: []
-  _placed: 1
+  <Placed>k__BackingField: 0
   _lastPosition: {x: 0, y: 0, z: 0}
 --- !u!1 &379206364
 GameObject:
@@ -1633,6 +1633,140 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
+--- !u!1 &398465824
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 398465825}
+  - component: {fileID: 398465827}
+  - component: {fileID: 398465826}
+  m_Layer: 5
+  m_Name: Tutorial Description
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &398465825
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 398465824}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1373477927}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 0, y: -19.793983}
+  m_SizeDelta: {x: 0, y: -39.588}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &398465826
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 398465824}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_text: Metin Girin
+  m_isRightToLeft: 0
+  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontSharedMaterials: []
+  m_fontMaterial: {fileID: 0}
+  m_fontMaterials: []
+  m_fontColor32:
+    serializedVersion: 2
+    rgba: 4294967295
+  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
+  m_enableVertexGradient: 0
+  m_colorMode: 3
+  m_fontColorGradient:
+    topLeft: {r: 1, g: 1, b: 1, a: 1}
+    topRight: {r: 1, g: 1, b: 1, a: 1}
+    bottomLeft: {r: 1, g: 1, b: 1, a: 1}
+    bottomRight: {r: 1, g: 1, b: 1, a: 1}
+  m_fontColorGradientPreset: {fileID: 0}
+  m_spriteAsset: {fileID: 0}
+  m_tintAllSprites: 0
+  m_StyleSheet: {fileID: 0}
+  m_TextStyleHashCode: -1183493901
+  m_overrideHtmlColors: 0
+  m_faceColor:
+    serializedVersion: 2
+    rgba: 4294967295
+  m_fontSize: 24
+  m_fontSizeBase: 24
+  m_fontWeight: 400
+  m_enableAutoSizing: 0
+  m_fontSizeMin: 18
+  m_fontSizeMax: 72
+  m_fontStyle: 0
+  m_HorizontalAlignment: 1
+  m_VerticalAlignment: 256
+  m_textAlignment: 65535
+  m_characterSpacing: 0
+  m_wordSpacing: 0
+  m_lineSpacing: 0
+  m_lineSpacingMax: 0
+  m_paragraphSpacing: 0
+  m_charWidthMaxAdj: 0
+  m_enableWordWrapping: 1
+  m_wordWrappingRatios: 0.4
+  m_overflowMode: 3
+  m_linkedTextComponent: {fileID: 0}
+  parentLinkedComponent: {fileID: 0}
+  m_enableKerning: 1
+  m_enableExtraPadding: 0
+  checkPaddingRequired: 0
+  m_isRichText: 1
+  m_parseCtrlCharacters: 1
+  m_isOrthographic: 1
+  m_isCullingEnabled: 0
+  m_horizontalMapping: 0
+  m_verticalMapping: 0
+  m_uvLineOffset: 0
+  m_geometrySortingOrder: 0
+  m_IsTextObjectScaleStatic: 0
+  m_VertexBufferAutoSizeReduction: 0
+  m_useMaxVisibleDescender: 1
+  m_pageToDisplay: 1
+  m_margin: {x: 0, y: 0, z: 0, w: 0}
+  m_isUsingLegacyAnimationComponent: 0
+  m_isVolumetricText: 0
+  m_hasFontAssetChanged: 0
+  m_baseMaterial: {fileID: 0}
+  m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!222 &398465827
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 398465824}
+  m_CullTransparentMesh: 1
 --- !u!1 &511609398
 GameObject:
   m_ObjectHideFlags: 0
@@ -1707,7 +1841,7 @@ MonoBehaviour:
   _hexagonMeshMaterial:
     <Mesh>k__BackingField: {fileID: 0}
     <MaterialList>k__BackingField: []
-  _placed: 1
+  <Placed>k__BackingField: 0
   _lastPosition: {x: 0, y: 0, z: 0}
 --- !u!23 &511609401
 MeshRenderer:
@@ -2157,7 +2291,7 @@ MonoBehaviour:
   _hexagonMeshMaterial:
     <Mesh>k__BackingField: {fileID: 0}
     <MaterialList>k__BackingField: []
-  _placed: 1
+  <Placed>k__BackingField: 0
   _lastPosition: {x: 0, y: 0, z: 0}
 --- !u!23 &835640641
 MeshRenderer:
@@ -2277,7 +2411,7 @@ MonoBehaviour:
   _hexagonMeshMaterial:
     <Mesh>k__BackingField: {fileID: 0}
     <MaterialList>k__BackingField: []
-  _placed: 1
+  <Placed>k__BackingField: 0
   _lastPosition: {x: 0, y: 0, z: 0}
   _connectedObjects: []
 --- !u!1 &947786738
@@ -2354,7 +2488,7 @@ MonoBehaviour:
   _hexagonMeshMaterial:
     <Mesh>k__BackingField: {fileID: 0}
     <MaterialList>k__BackingField: []
-  _placed: 1
+  <Placed>k__BackingField: 0
   _lastPosition: {x: 0, y: 0, z: 0}
 --- !u!23 &947786741
 MeshRenderer:
@@ -2517,7 +2651,7 @@ MonoBehaviour:
   _hexagonMeshMaterial:
     <Mesh>k__BackingField: {fileID: 0}
     <MaterialList>k__BackingField: []
-  _placed: 1
+  <Placed>k__BackingField: 0
   _lastPosition: {x: 0, y: 0, z: 0}
 --- !u!23 &980731545
 MeshRenderer:
@@ -2680,7 +2814,7 @@ MonoBehaviour:
   _hexagonMeshMaterial:
     <Mesh>k__BackingField: {fileID: 0}
     <MaterialList>k__BackingField: []
-  _placed: 1
+  <Placed>k__BackingField: 0
   _lastPosition: {x: 0, y: 0, z: 0}
 --- !u!23 &984676010
 MeshRenderer:
@@ -2843,7 +2977,7 @@ MonoBehaviour:
   _hexagonMeshMaterial:
     <Mesh>k__BackingField: {fileID: 0}
     <MaterialList>k__BackingField: []
-  _placed: 1
+  <Placed>k__BackingField: 0
   _lastPosition: {x: 0, y: 0, z: 0}
 --- !u!23 &987358272
 MeshRenderer:
@@ -3006,7 +3140,7 @@ MonoBehaviour:
   _hexagonMeshMaterial:
     <Mesh>k__BackingField: {fileID: 0}
     <MaterialList>k__BackingField: []
-  _placed: 1
+  <Placed>k__BackingField: 0
   _lastPosition: {x: 0, y: 0, z: 0}
 --- !u!23 &1005816901
 MeshRenderer:
@@ -3275,7 +3409,7 @@ MonoBehaviour:
   _hexagonMeshMaterial:
     <Mesh>k__BackingField: {fileID: 0}
     <MaterialList>k__BackingField: []
-  _placed: 1
+  <Placed>k__BackingField: 0
   _lastPosition: {x: 0, y: 0, z: 0}
 --- !u!23 &1099607962
 MeshRenderer:
@@ -3364,6 +3498,140 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1124040730
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1124040731}
+  - component: {fileID: 1124040733}
+  - component: {fileID: 1124040732}
+  m_Layer: 5
+  m_Name: Tutorial Title
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1124040731
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1124040730}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1373477927}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1124040732
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1124040730}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_text: Metin Girin
+  m_isRightToLeft: 0
+  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontSharedMaterials: []
+  m_fontMaterial: {fileID: 0}
+  m_fontMaterials: []
+  m_fontColor32:
+    serializedVersion: 2
+    rgba: 4294967295
+  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
+  m_enableVertexGradient: 0
+  m_colorMode: 3
+  m_fontColorGradient:
+    topLeft: {r: 1, g: 1, b: 1, a: 1}
+    topRight: {r: 1, g: 1, b: 1, a: 1}
+    bottomLeft: {r: 1, g: 1, b: 1, a: 1}
+    bottomRight: {r: 1, g: 1, b: 1, a: 1}
+  m_fontColorGradientPreset: {fileID: 0}
+  m_spriteAsset: {fileID: 0}
+  m_tintAllSprites: 0
+  m_StyleSheet: {fileID: 0}
+  m_TextStyleHashCode: -1183493901
+  m_overrideHtmlColors: 0
+  m_faceColor:
+    serializedVersion: 2
+    rgba: 4294967295
+  m_fontSize: 36
+  m_fontSizeBase: 36
+  m_fontWeight: 400
+  m_enableAutoSizing: 0
+  m_fontSizeMin: 18
+  m_fontSizeMax: 72
+  m_fontStyle: 0
+  m_HorizontalAlignment: 1
+  m_VerticalAlignment: 256
+  m_textAlignment: 65535
+  m_characterSpacing: 0
+  m_wordSpacing: 0
+  m_lineSpacing: 0
+  m_lineSpacingMax: 0
+  m_paragraphSpacing: 0
+  m_charWidthMaxAdj: 0
+  m_enableWordWrapping: 1
+  m_wordWrappingRatios: 0.4
+  m_overflowMode: 0
+  m_linkedTextComponent: {fileID: 0}
+  parentLinkedComponent: {fileID: 0}
+  m_enableKerning: 1
+  m_enableExtraPadding: 0
+  checkPaddingRequired: 0
+  m_isRichText: 1
+  m_parseCtrlCharacters: 1
+  m_isOrthographic: 1
+  m_isCullingEnabled: 0
+  m_horizontalMapping: 0
+  m_verticalMapping: 0
+  m_uvLineOffset: 0
+  m_geometrySortingOrder: 0
+  m_IsTextObjectScaleStatic: 0
+  m_VertexBufferAutoSizeReduction: 0
+  m_useMaxVisibleDescender: 1
+  m_pageToDisplay: 1
+  m_margin: {x: 0, y: 0, z: 0, w: 0}
+  m_isUsingLegacyAnimationComponent: 0
+  m_isVolumetricText: 0
+  m_hasFontAssetChanged: 0
+  m_baseMaterial: {fileID: 0}
+  m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!222 &1124040733
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1124040730}
+  m_CullTransparentMesh: 1
 --- !u!1 &1214647021
 GameObject:
   m_ObjectHideFlags: 0
@@ -3438,7 +3706,7 @@ MonoBehaviour:
   _hexagonMeshMaterial:
     <Mesh>k__BackingField: {fileID: 0}
     <MaterialList>k__BackingField: []
-  _placed: 1
+  <Placed>k__BackingField: 0
   _lastPosition: {x: 0, y: 0, z: 0}
 --- !u!23 &1214647024
 MeshRenderer:
@@ -3735,7 +4003,7 @@ MonoBehaviour:
   _hexagonMeshMaterial:
     <Mesh>k__BackingField: {fileID: 0}
     <MaterialList>k__BackingField: []
-  _placed: 1
+  <Placed>k__BackingField: 0
   _lastPosition: {x: 0, y: 0, z: 0}
 --- !u!23 &1265639577
 MeshRenderer:
@@ -3987,7 +4255,7 @@ MonoBehaviour:
   _hexagonMeshMaterial:
     <Mesh>k__BackingField: {fileID: 0}
     <MaterialList>k__BackingField: []
-  _placed: 1
+  <Placed>k__BackingField: 0
   _lastPosition: {x: 0, y: 0, z: 0}
 --- !u!23 &1322401716
 MeshRenderer:
@@ -4294,6 +4562,83 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 4294967295
   m_MaxRayIntersections: 0
+--- !u!1 &1373477926
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1373477927}
+  - component: {fileID: 1373477929}
+  - component: {fileID: 1373477928}
+  m_Layer: 5
+  m_Name: Tutorial Background
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!224 &1373477927
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1373477926}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 1124040731}
+  - {fileID: 398465825}
+  m_Father: {fileID: 4410097996649309991}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: -760, y: 370}
+  m_SizeDelta: {x: 400, y: 140}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1373477928
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1373477926}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 0.2901961, g: 0.2901961, b: 0.2901961, a: 0.68235296}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 0}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &1373477929
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1373477926}
+  m_CullTransparentMesh: 1
 --- !u!1 &1379602929
 GameObject:
   m_ObjectHideFlags: 0
@@ -4368,7 +4713,7 @@ MonoBehaviour:
   _hexagonMeshMaterial:
     <Mesh>k__BackingField: {fileID: 0}
     <MaterialList>k__BackingField: []
-  _placed: 1
+  <Placed>k__BackingField: 0
   _lastPosition: {x: 0, y: 0, z: 0}
 --- !u!23 &1379602932
 MeshRenderer:
@@ -4531,7 +4876,7 @@ MonoBehaviour:
   _hexagonMeshMaterial:
     <Mesh>k__BackingField: {fileID: 0}
     <MaterialList>k__BackingField: []
-  _placed: 1
+  <Placed>k__BackingField: 0
   _lastPosition: {x: 0, y: 0, z: 0}
 --- !u!23 &1400955624
 MeshRenderer:
@@ -4694,7 +5039,7 @@ MonoBehaviour:
   _hexagonMeshMaterial:
     <Mesh>k__BackingField: {fileID: 0}
     <MaterialList>k__BackingField: []
-  _placed: 1
+  <Placed>k__BackingField: 0
   _lastPosition: {x: 0, y: 0, z: 0}
 --- !u!23 &1497285805
 MeshRenderer:
@@ -4949,6 +5294,18 @@ MonoBehaviour:
         m_CallState: 2
     m_ActionId: 724e8c65-2e7f-47fd-8267-b949c60f00b3
     m_ActionName: Player/Move
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 2f7e0a74-bebc-4c1d-b88b-4dd7ebe9211c
+    m_ActionName: Player/RotateRight[/Keyboard/e]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: fbe2149a-6327-4cfe-b660-d9efaa49375b
+    m_ActionName: Player/RotateLeft[/Keyboard/q]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: c083f75f-a0c5-4b28-8078-cf43e35238e8
+    m_ActionName: Player/MoveTrigger[/Mouse/middleButton]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: Player
@@ -5074,7 +5431,7 @@ MonoBehaviour:
   _hexagonMeshMaterial:
     <Mesh>k__BackingField: {fileID: 0}
     <MaterialList>k__BackingField: []
-  _placed: 1
+  <Placed>k__BackingField: 0
   _lastPosition: {x: 0, y: 0, z: 0}
 --- !u!23 &1621944543
 MeshRenderer:
@@ -5312,7 +5669,7 @@ MonoBehaviour:
   _hexagonMeshMaterial:
     <Mesh>k__BackingField: {fileID: 0}
     <MaterialList>k__BackingField: []
-  _placed: 1
+  <Placed>k__BackingField: 0
   _lastPosition: {x: 0, y: 0, z: 0}
 --- !u!23 &1793135684
 MeshRenderer:
@@ -5475,7 +5832,7 @@ MonoBehaviour:
   _hexagonMeshMaterial:
     <Mesh>k__BackingField: {fileID: 0}
     <MaterialList>k__BackingField: []
-  _placed: 1
+  <Placed>k__BackingField: 0
   _lastPosition: {x: 0, y: 0, z: 0}
 --- !u!23 &1829567287
 MeshRenderer:
@@ -5638,7 +5995,7 @@ MonoBehaviour:
   _hexagonMeshMaterial:
     <Mesh>k__BackingField: {fileID: 0}
     <MaterialList>k__BackingField: []
-  _placed: 1
+  <Placed>k__BackingField: 0
   _lastPosition: {x: 0, y: 0, z: 0}
 --- !u!23 &1841643673
 MeshRenderer:
@@ -5833,7 +6190,7 @@ MonoBehaviour:
   _hexagonMeshMaterial:
     <Mesh>k__BackingField: {fileID: 0}
     <MaterialList>k__BackingField: []
-  _placed: 1
+  <Placed>k__BackingField: 0
   _lastPosition: {x: 0, y: 0, z: 0}
 --- !u!23 &1894188899
 MeshRenderer:
@@ -5996,7 +6353,7 @@ MonoBehaviour:
   _hexagonMeshMaterial:
     <Mesh>k__BackingField: {fileID: 0}
     <MaterialList>k__BackingField: []
-  _placed: 1
+  <Placed>k__BackingField: 0
   _lastPosition: {x: 0, y: 0, z: 0}
 --- !u!23 &1936148812
 MeshRenderer:
@@ -6227,7 +6584,7 @@ MonoBehaviour:
   _hexagonMeshMaterial:
     <Mesh>k__BackingField: {fileID: 0}
     <MaterialList>k__BackingField: []
-  _placed: 1
+  <Placed>k__BackingField: 0
   _lastPosition: {x: 0, y: 0, z: 0}
 --- !u!23 &1984492180
 MeshRenderer:
@@ -6390,7 +6747,7 @@ MonoBehaviour:
   _hexagonMeshMaterial:
     <Mesh>k__BackingField: {fileID: 0}
     <MaterialList>k__BackingField: []
-  _placed: 1
+  <Placed>k__BackingField: 0
   _lastPosition: {x: 0, y: 0, z: 0}
 --- !u!23 &1988123234
 MeshRenderer:
@@ -6553,7 +6910,7 @@ MonoBehaviour:
   _hexagonMeshMaterial:
     <Mesh>k__BackingField: {fileID: 0}
     <MaterialList>k__BackingField: []
-  _placed: 1
+  <Placed>k__BackingField: 0
   _lastPosition: {x: 0, y: 0, z: 0}
 --- !u!23 &2086652643
 MeshRenderer:
@@ -6717,6 +7074,7 @@ GameObject:
   - component: {fileID: 8309712740351865307}
   - component: {fileID: 970377409996208365}
   - component: {fileID: 5739695355171859930}
+  - component: {fileID: 8309712740351865308}
   m_Layer: 5
   m_Name: Villager Image
   m_TagString: Untagged
@@ -7403,6 +7761,7 @@ GameObject:
   - component: {fileID: 1600782641925132267}
   - component: {fileID: 7603541869839104722}
   - component: {fileID: 7798619935400223207}
+  - component: {fileID: 7798619935400223208}
   m_Layer: 0
   m_Name: "Muhtarl\u0131k"
   m_TagString: Untagged
@@ -9148,6 +9507,7 @@ GameObject:
   - component: {fileID: 3398331073110602134}
   - component: {fileID: 4536063573865530913}
   - component: {fileID: 8388199852794225407}
+  - component: {fileID: 8388199852794225408}
   m_Layer: 0
   m_Name: Game Manager
   m_TagString: Untagged
@@ -9292,7 +9652,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isGameStarted: 0
   SandGatherTime: 10
-  StoneGatherTime: 15
+  StoneGatherTime: 12
   FoodGatherTime: 10
   currentSandGatherTime: 0
   currentStoneGatherTime: 0
@@ -9406,7 +9766,7 @@ MonoBehaviour:
   _hexagonMeshMaterial:
     <Mesh>k__BackingField: {fileID: 0}
     <MaterialList>k__BackingField: []
-  _placed: 1
+  <Placed>k__BackingField: 0
   _lastPosition: {x: 0, y: 0, z: 0}
 --- !u!64 &3469287837004512746
 MeshCollider:
@@ -9513,7 +9873,7 @@ MonoBehaviour:
   _hexagonMeshMaterial:
     <Mesh>k__BackingField: {fileID: 0}
     <MaterialList>k__BackingField: []
-  _placed: 1
+  <Placed>k__BackingField: 0
   _lastPosition: {x: 0, y: 0, z: 0}
 --- !u!33 &3469287838101388159
 MeshFilter:
@@ -9576,7 +9936,7 @@ MonoBehaviour:
   _hexagonMeshMaterial:
     <Mesh>k__BackingField: {fileID: 0}
     <MaterialList>k__BackingField: []
-  _placed: 1
+  <Placed>k__BackingField: 0
   _lastPosition: {x: 0, y: 0, z: 0}
 --- !u!64 &3469287838101388162
 MeshCollider:
@@ -9683,7 +10043,7 @@ MonoBehaviour:
   _hexagonMeshMaterial:
     <Mesh>k__BackingField: {fileID: 0}
     <MaterialList>k__BackingField: []
-  _placed: 1
+  <Placed>k__BackingField: 0
   _lastPosition: {x: 0, y: 0, z: 0}
 --- !u!33 &3469287838579083899
 MeshFilter:
@@ -9746,7 +10106,7 @@ MonoBehaviour:
   _hexagonMeshMaterial:
     <Mesh>k__BackingField: {fileID: 0}
     <MaterialList>k__BackingField: []
-  _placed: 1
+  <Placed>k__BackingField: 0
   _lastPosition: {x: 0, y: 0, z: 0}
 --- !u!64 &3469287838579083902
 MeshCollider:
@@ -9983,6 +10343,7 @@ MonoBehaviour:
   disasterTimer: {fileID: 6474390552697950635}
   HUD: {fileID: 183258045721824562}
   mainMenu: {fileID: 5389597886112232380}
+  towerManager: {fileID: 7798619935400223208}
 --- !u!114 &3796407034519931990
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10050,6 +10411,7 @@ GameObject:
   - component: {fileID: 1422880893502865110}
   - component: {fileID: 7950424937592804441}
   - component: {fileID: 4110046213994863591}
+  - component: {fileID: 7950424937592804442}
   m_Layer: 5
   m_Name: Food Image
   m_TagString: Untagged
@@ -10743,6 +11105,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1247734040729229934}
+  - {fileID: 1373477927}
   - {fileID: 348055909963938179}
   - {fileID: 6904077065534022347}
   - {fileID: 6114093804283648343}
@@ -10986,6 +11349,7 @@ GameObject:
   - component: {fileID: 704361837187645680}
   - component: {fileID: 7176197517026265195}
   - component: {fileID: 178698581557341001}
+  - component: {fileID: 7176197517026265196}
   m_Layer: 5
   m_Name: Stone Image
   m_TagString: Untagged
@@ -11721,9 +12085,9 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 1185047639457998924}
   - {fileID: 3094613392846845477}
   - {fileID: 1088062524047218912}
-  - {fileID: 1185047639457998924}
   m_Father: {fileID: 6357166087493997736}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -11821,7 +12185,7 @@ MonoBehaviour:
   foodResourceCount: 0
   villagerWorkerCount: 8
   villagerResourceCount: 0
-  prices: 050000000f0000000c000000
+  prices: 0a0000000f0000000c000000
   _village: {fileID: 924002492}
   AllHexagons: []
   _hexagonLayer:
@@ -12301,7 +12665,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   timerStarted: 0
   timerProgressBar: {fileID: 7526704155340513055}
-  timerLimit: 17
+  timerLimit: 12
   gameManager: {fileID: 5970927920190924839}
 --- !u!1 &6525206091984768604
 GameObject:
@@ -12704,6 +13068,51 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4896066460512138910}
   m_CullTransparentMesh: 1
+--- !u!114 &7176197517026265196
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4896066460512138910}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 0
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 8388199852794225408}
+          m_TargetAssemblyTypeName: TutorialManager, Assembly-CSharp
+          m_MethodName: OpenTutorialBox
+          m_Mode: 3
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 1
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - eventID: 1
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 8388199852794225408}
+          m_TargetAssemblyTypeName: TutorialManager, Assembly-CSharp
+          m_MethodName: CloseTutorialBox
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!222 &7215500867412910750
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -13039,6 +13448,22 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
+--- !u!114 &7798619935400223208
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1218480831802779754}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8eb1a861135ab16448ea5ff68cc1b122, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  towerFloors: []
+  floorCreationTimeInterval: 45
+  floorElevationTime: 3
+  isGameStarted: 0
 --- !u!114 &7800669724088517464
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13222,6 +13647,51 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3825987118844286848}
   m_CullTransparentMesh: 1
+--- !u!114 &7950424937592804442
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3825987118844286848}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 0
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 8388199852794225408}
+          m_TargetAssemblyTypeName: TutorialManager, Assembly-CSharp
+          m_MethodName: OpenTutorialBox
+          m_Mode: 3
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 2
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - eventID: 0
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 8388199852794225408}
+          m_TargetAssemblyTypeName: TutorialManager, Assembly-CSharp
+          m_MethodName: CloseTutorialBox
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!222 &7959258704377524504
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -13241,6 +13711,7 @@ GameObject:
   - component: {fileID: 5123465216699383800}
   - component: {fileID: 450614220937023611}
   - component: {fileID: 6329534578478115595}
+  - component: {fileID: 7967573606454205122}
   m_Layer: 5
   m_Name: Sand Image
   m_TagString: Untagged
@@ -13248,6 +13719,51 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &7967573606454205122
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7967573606454205121}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 0
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 8388199852794225408}
+          m_TargetAssemblyTypeName: TutorialManager, Assembly-CSharp
+          m_MethodName: OpenTutorialBox
+          m_Mode: 3
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - eventID: 1
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 8388199852794225408}
+          m_TargetAssemblyTypeName: TutorialManager, Assembly-CSharp
+          m_MethodName: OpenTutorialBox
+          m_Mode: 3
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &7990090894815848738
 GameObject:
   m_ObjectHideFlags: 0
@@ -13420,6 +13936,51 @@ RectTransform:
   m_AnchoredPosition: {x: 800, y: 0}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &8309712740351865308
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 195818973417234407}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 0
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 8388199852794225408}
+          m_TargetAssemblyTypeName: TutorialManager, Assembly-CSharp
+          m_MethodName: OpenTutorialBox
+          m_Mode: 3
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 3
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - eventID: 1
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 8388199852794225408}
+          m_TargetAssemblyTypeName: TutorialManager, Assembly-CSharp
+          m_MethodName: CloseTutorialBox
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!222 &8326819603324058217
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -13481,6 +14042,26 @@ MonoBehaviour:
   - {fileID: 776919322285741412}
   - {fileID: 1218480831802779754}
   GameOverPanel: {fileID: 725078433}
+--- !u!114 &8388199852794225408
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3233174802270650059}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 869f5b666993ceb4fb4a96b512d47169, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  resources:
+  - {fileID: 11400000, guid: 0bf65ce3705339b4c8b044ca6e584350, type: 2}
+  - {fileID: 11400000, guid: 7f2f05359ad006a45819a7978a8a1076, type: 2}
+  - {fileID: 11400000, guid: 43af517437b2f024a829143c972dfaee, type: 2}
+  - {fileID: 11400000, guid: afb71b7c5e4c5494db472ac797484c0d, type: 2}
+  tutorialBox: {fileID: 1373477926}
+  _textTitle: {fileID: 1124040732}
+  _textDescription: {fileID: 398465826}
 --- !u!224 &8403386062668053500
 RectTransform:
   m_ObjectHideFlags: 0

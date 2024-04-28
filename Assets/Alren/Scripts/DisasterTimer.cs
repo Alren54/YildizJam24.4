@@ -10,7 +10,6 @@ namespace Alren
     public class DisasterTimer : MonoBehaviour
     {
         [HideInInspector] public bool timerStarted;
-        private bool isFirstTimer;
         [SerializeField] private GameObject timerProgressBar;
         [SerializeField] private float timerLimit = 20;
         [SerializeField] private GameManager gameManager;
@@ -24,7 +23,6 @@ namespace Alren
         void Start()
         {
             timer = 0;
-            isFirstTimer = true;
         }
 
         // Update is called once per frame

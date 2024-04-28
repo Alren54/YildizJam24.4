@@ -10,6 +10,7 @@ public class PauseManager : MonoBehaviour
     private ResourceGathering resourceGathering;
     [SerializeField] private GameObject HUD;
     [SerializeField] private GameObject mainMenu;
+    [SerializeField] private TowerManager towerManager;
 
     private void Awake()
     {
@@ -23,6 +24,7 @@ public class PauseManager : MonoBehaviour
         mainMenu.SetActive(false);
         disasterTimer.timerStarted = true;
         resourceGathering.isGameStarted = true;
+        towerManager.isGameStarted = true;
     }
 
     public void QuitGame()
