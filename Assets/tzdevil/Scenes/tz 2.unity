@@ -675,6 +675,9 @@ MonoBehaviour:
   _holdingMiddleMouse: 0
   _movementInput: {x: 0, y: 0}
   _currentRotationValue: 0
+  _inMainMenu: 1
+  _maxCameraYRot: 25
+  _speed: 0.4
 --- !u!4 &148304818
 Transform:
   m_ObjectHideFlags: 0
@@ -2019,7 +2022,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 6357166087493997736}
+  m_Father: {fileID: 1025878941}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -3991,6 +3994,7 @@ RectTransform:
   - {fileID: 1302814569}
   - {fileID: 81859864}
   - {fileID: 1492084576}
+  - {fileID: 455242741}
   m_Father: {fileID: 6357166087493997736}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
@@ -14532,7 +14536,6 @@ RectTransform:
   m_Children:
   - {fileID: 4410097996649309991}
   - {fileID: 725078434}
-  - {fileID: 455242741}
   - {fileID: 1025878941}
   m_Father: {fileID: 2578770767248013249}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

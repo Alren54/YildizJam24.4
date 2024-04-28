@@ -51,7 +51,7 @@ namespace tzdevil.Gameplay
         [SerializeField] private HexagonMeshMaterial _hexagonMeshMaterial;
 
         [field: Header("Game Loop")]
-        [field: SerializeField] public bool Placed { get; set; }
+        [field: SerializeField] public bool Placed { get; set;  }
         [SerializeField] private Vector3 _lastPosition;
         [SerializeField] private RaycastHit[] _results;
 

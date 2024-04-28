@@ -36,6 +36,11 @@ namespace tzdevil.Gameplay
         [Header("Rotation")]
         [SerializeField] private float _currentRotationValue;
 
+        [Header("Main Menu Effect")]
+        [SerializeField] private bool _inMainMenu;
+        [SerializeField] private float _maxCameraYRot;
+        [SerializeField] private float _speed;
+
         private void Awake()
         {
             _mouse = Mouse.current;
@@ -51,11 +56,24 @@ namespace tzdevil.Gameplay
             if (_cameraCurrentlyInUse)
                 return;
 
+            if (_inMainMenu)
+            {
+                MainMenuRotation();
+                return;
+            }
+
             MoveWithMouse();
 
             MoveWithKeys();
 
             ZoomWithScrollWheel();
+        }
+
+        private void MainMenuRotation()
+        {
+            float angle = _maxCameraYRot * Mathf.Sin(Time.time * _speed);
+
+            _cameraRotationTransform.eulerAngles = new Vector3(_cameraRotationTransform.eulerAngles.x, angle, _cameraRotationTransform.eulerAngles.z);
         }
 
         public void MoveScreen(InputAction.CallbackContext context)
