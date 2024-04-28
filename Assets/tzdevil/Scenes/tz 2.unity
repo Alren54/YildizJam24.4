@@ -9660,6 +9660,7 @@ MeshRenderer:
   - {fileID: 2100000, guid: 9ce038ffcce06644ca2741936819ed76, type: 2}
   - {fileID: 2100000, guid: 60e0f9a88a3fc954d855423bc8526d1a, type: 2}
   - {fileID: 2100000, guid: fb5e05d1e66c80846824f4eb2c704cf4, type: 2}
+  - {fileID: 2100000, guid: 16831f6055f9bfc41a68348419fc7ab5, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -12376,6 +12377,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   disasterTimer: {fileID: 6474390552697950635}
+  _cameraController: {fileID: 148304817}
   HUD: {fileID: 183258045721824562}
   mainMenu: {fileID: 1025878940}
   creditsMenu: {fileID: 0}
@@ -13761,6 +13763,7 @@ MeshRenderer:
   - {fileID: 2100000, guid: fb5e05d1e66c80846824f4eb2c704cf4, type: 2}
   - {fileID: 2100000, guid: 60e0f9a88a3fc954d855423bc8526d1a, type: 2}
   - {fileID: 2100000, guid: de1e6343e966e8644ba413ead505ee02, type: 2}
+  - {fileID: 2100000, guid: 16831f6055f9bfc41a68348419fc7ab5, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -14309,6 +14312,7 @@ MeshRenderer:
   - {fileID: 2100000, guid: 60e0f9a88a3fc954d855423bc8526d1a, type: 2}
   - {fileID: 2100000, guid: de1e6343e966e8644ba413ead505ee02, type: 2}
   - {fileID: 2100000, guid: a3191b2e390cf6b4385f012b5a5bb20f, type: 2}
+  - {fileID: 2100000, guid: 16831f6055f9bfc41a68348419fc7ab5, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0

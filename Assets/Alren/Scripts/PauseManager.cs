@@ -1,13 +1,15 @@
 using Alren;
 using System.Collections;
 using System.Collections.Generic;
+using tzdevil.Gameplay;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
 public class PauseManager : MonoBehaviour
 {
-    private GameManager gameManager;
+    private tzdevil.Gameplay.GameManager gameManager;
     [SerializeField] private DisasterTimer disasterTimer;
+    [SerializeField] private CameraController _cameraController;
     private ResourceGathering resourceGathering;
     [SerializeField] private GameObject HUD;
     [SerializeField] private GameObject mainMenu;
@@ -26,7 +28,7 @@ public class PauseManager : MonoBehaviour
 
     private void Awake()
     {
-        gameManager = GetComponent<GameManager>();
+        gameManager = GetComponent<tzdevil.Gameplay.GameManager>();
         resourceGathering = GetComponent<ResourceGathering>();
         _keyboard = Keyboard.current;
     }
@@ -57,6 +59,8 @@ public class PauseManager : MonoBehaviour
         disasterTimer.timerStarted = true;
         resourceGathering.isGameStarted = true;
         towerManager.isGameStarted = true;
+
+        _cameraController.ChangeMainMenuState(false);
 
         _cameraAnimator.Play(_cameraAnimHashes[1]);
     }
