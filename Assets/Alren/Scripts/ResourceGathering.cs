@@ -9,9 +9,9 @@ public class ResourceGathering : MonoBehaviour
     [SerializeField] private double SandGatherTime = 10;
     [SerializeField] private double StoneGatherTime = 10;
     [SerializeField] private double FoodGatherTime = 10;
-    private double currentSandGatherTime;
-    private double currentStoneGatherTime;
-    private double currentFoodGatherTime;
+    [SerializeField] private double currentSandGatherTime;
+    [SerializeField] private double currentStoneGatherTime;
+    [SerializeField] private double currentFoodGatherTime;
     private double SandTimer;
     private double StoneTimer;
     private double FoodTimer;
@@ -47,7 +47,7 @@ public class ResourceGathering : MonoBehaviour
                 if (gameManager.res[0].WorkerCount > 0)
                 {
                     tempTimer = SandGatherTime;
-                    tempTimer = 10 * Mathf.Pow(0.9f, gameManager.res[0].WorkerCount);
+                    tempTimer = SandGatherTime * Mathf.Pow(0.9f, gameManager.res[0].WorkerCount);
                     currentSandGatherTime = tempTimer;
                 }
 
@@ -61,10 +61,7 @@ public class ResourceGathering : MonoBehaviour
                 if (gameManager.res[1].WorkerCount > 0)
                 {
                     tempTimer = StoneGatherTime;
-                    for (int i = 0; i < gameManager.res[1].WorkerCount; i++)
-                    {
-                        tempTimer = tempTimer * 9 / 10;
-                    }
+                    tempTimer = StoneGatherTime * Mathf.Pow(0.9f, gameManager.res[1].WorkerCount);
                     currentStoneGatherTime = tempTimer;
                 }
             }
@@ -74,13 +71,10 @@ public class ResourceGathering : MonoBehaviour
                 isResourceChanged = true;
                 FoodTimer = 0;
 
-                if (gameManager.res[2].WorkerCount > 0)
+                if (gameManager.res[1].WorkerCount > 0)
                 {
                     tempTimer = FoodGatherTime;
-                    for (int i = 0; i < gameManager.res[2].WorkerCount; i++)
-                    {
-                        tempTimer = tempTimer * 9 / 10;
-                    }
+                    tempTimer = FoodGatherTime * Mathf.Pow(0.9f, gameManager.res[2].WorkerCount);
                     currentFoodGatherTime = tempTimer;
                 }
             }
