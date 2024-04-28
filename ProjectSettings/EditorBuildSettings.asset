@@ -6,8 +6,8 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Alren/Scenes/alren.unity
-    guid: 99c9720ab356a0642a771bea13969a05
+    path: Assets/Alren/Scenes/alren 5.unity
+    guid: 961fc2d40116f814085d1bc1fa8d61b7
   m_configObjects:
     com.unity.input.settings: {fileID: 11400000, guid: 0f2ec8cf51fd2bb4da4c86a49e072332,
       type: 2}
