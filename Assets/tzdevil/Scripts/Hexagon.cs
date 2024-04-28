@@ -114,24 +114,6 @@ namespace tzdevil.Gameplay
             _gameManager.OnFindBlankHexagon?.Invoke(_blankPlaces);
         }
 
-        //public void OnPointerClick(PointerEventData eventData)
-        //{
-        //    if (eventData.button == PointerEventData.InputButton.Left && !_placed)
-        //    {
-        //        var pos = GetRoundedPosition(_transform.position);
-        //        pos.y = 0;
-
-        //        if (!_placesYouCanPlaceHexagon.Contains(pos))
-        //            return;
-
-        //        _placed = true;
-        //        _gameManager.OnPlaceNewHexagon?.Invoke(this);
-        //        Debug.Log("placed", gameObject);
-
-        //        gameObject.layer = 6;
-        //    }
-        //}
-
         private void Update()
         {
             HexagonMovement();
@@ -159,7 +141,9 @@ namespace tzdevil.Gameplay
                     return;
 
                 Placed = true;
+
                 _gameManager.OnPlaceNewHexagon?.Invoke(this);
+
                 Debug.Log("placed", gameObject);
 
                 _transform.localScale = Vector3.zero;

@@ -15,7 +15,7 @@ namespace tzdevil.Gameplay
 
         public HashSet<Transform> FindAllIslands()
         {
-            var allHexagons = FindObjectsByType<Hexagon>(FindObjectsSortMode.None).Where(h => h != this).Select(h => h.transform);
+            var allHexagons = FindObjectsByType<Hexagon>(FindObjectsSortMode.None).Where(h => h != this && h.Placed).Select(h => h.transform);
 
             _connectedObjects = new();
             var connectedObjects = FindConnectedObjects(transform);

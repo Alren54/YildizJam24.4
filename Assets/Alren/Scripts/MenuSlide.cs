@@ -25,14 +25,14 @@ public class MenuSlide : MonoBehaviour
             case 0:
                 if (!isMoving[element] && !isOpen[element])
                 {
-                    menus[0].transform.DOMoveX(transform.position.x + 70, 1);
+                    menus[0].transform.DOMoveX(transform.position.x + 70, .25f);
                     isOpen[element] = true;
                     StartCoroutine(EnsureSliding(element));
                     print("0 gel");
                 }
                 else if (!isMoving[element] && isOpen[element])
                 {
-                    menus[0].transform.DOMoveX(transform.position.x - 70, 1);
+                    menus[0].transform.DOMoveX(transform.position.x - 70, .25f);
                     isOpen[element] = false;
                     StartCoroutine(EnsureSliding(element));
                     print("0 git");
@@ -41,14 +41,14 @@ public class MenuSlide : MonoBehaviour
             case 1:
                 if (!isMoving[element] && !isOpen[element])
                 {
-                    menus[1].transform.DOMoveY(transform.position.y + 120, 1);
+                    menus[1].transform.DOMoveY(transform.position.y + 120, .25f);
                     isOpen[element] = true;
                     StartCoroutine(EnsureSliding(element));
                     print("1 gel");
                 }
                 else if (!isMoving[element] && isOpen[element])
                 {
-                    menus[1].transform.DOMoveY(transform.position.y - 120, 1);
+                    menus[1].transform.DOMoveY(transform.position.y - 120, .25f);
                     isOpen[element] = false;
                     StartCoroutine(EnsureSliding(element));
                     print("1 git");
@@ -57,14 +57,14 @@ public class MenuSlide : MonoBehaviour
             case 2:
                 if (!isMoving[element] && !isOpen[element])
                 {
-                    menus[2].transform.DOMoveX(transform.position.x + 1630, 1);
+                    menus[2].transform.DOMoveX(transform.position.x + 1630, .25f);
                     isOpen[element] = true;
                     StartCoroutine(EnsureSliding(element));
                     print("2 gel");
                 }
                 else if (!isMoving[element] && isOpen[element])
                 {
-                    menus[2].transform.DOMoveX(transform.position.x + 2180, 1);
+                    menus[2].transform.DOMoveX(transform.position.x + 2180, .25f);
                     isOpen[element] = false;
                     StartCoroutine(EnsureSliding(element));
                     print("2 git");

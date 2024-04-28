@@ -16,6 +16,7 @@ namespace tzdevil.Gameplay
 
         [Header("References")]
         [SerializeField] private Alren.GameManager _alrenGameManager;
+        [SerializeField] private AudioSource _placeHexagonAudioSource;
 
         public UnityEvent OnTryBuyNewHexagon;
         public UnityEvent<HashSet<Vector3>> OnFindBlankHexagon;
@@ -82,6 +83,9 @@ namespace tzdevil.Gameplay
 
         private void PlacedNewHexagon(Hexagon hexagon)
         {
+            _placeHexagonAudioSource.Play();
+            print("hello?");
+
             List<Hexagon> listToBeRemoved = new();
             foreach (var place in _hexagonList)
             {
