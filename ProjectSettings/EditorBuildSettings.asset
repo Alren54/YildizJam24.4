@@ -6,8 +6,8 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/alren 7.unity
-    guid: a082f123e65c4784f98807f6b5e205ef
+    path: Assets/tzdevil/Scenes/tz 2.unity
+    guid: 7f248e4ea9a6d84459d185ec34ae3f5b
   m_configObjects:
     com.unity.input.settings: {fileID: 11400000, guid: 0f2ec8cf51fd2bb4da4c86a49e072332,
       type: 2}

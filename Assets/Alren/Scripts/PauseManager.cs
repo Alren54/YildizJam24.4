@@ -20,10 +20,11 @@ public class PauseManager : MonoBehaviour
 
     [Header("Camera Animation")]
     [SerializeField] private Animator _cameraAnimator;
-    private int[] _cameraAnimHashes = new int[2]
+    private int[] _cameraAnimHashes = new int[3]
     {
-            Animator.StringToHash("MainMenu"),
-            Animator.StringToHash("Game")
+        Animator.StringToHash("MainMenu"),
+        Animator.StringToHash("Game"),
+        Animator.StringToHash("Credits")
     };
 
     private void Awake()
@@ -35,7 +36,7 @@ public class PauseManager : MonoBehaviour
 
     private void Update()
     {
-        if(_keyboard.escapeKey.wasPressedThisFrame && !mainMenu.activeInHierarchy && !creditsMenu.activeInHierarchy && !creditsMenu.activeInHierarchy)
+        if (_keyboard.escapeKey.wasPressedThisFrame && !mainMenu.activeInHierarchy && !creditsMenu.activeInHierarchy && !creditsMenu.activeInHierarchy)
         {
             if (PauseMenu.activeInHierarchy)
             {
@@ -82,11 +83,13 @@ public class PauseManager : MonoBehaviour
     {
         creditsMenu.SetActive(true);
         mainMenu.SetActive(false);
+        _cameraAnimator.Play(_cameraAnimHashes[2]);
     }
 
     public void BackFromCredits()
     {
         mainMenu.SetActive(true);
         creditsMenu.SetActive(false);
+        _cameraAnimator.Play(_cameraAnimHashes[0]);
     }
 }
