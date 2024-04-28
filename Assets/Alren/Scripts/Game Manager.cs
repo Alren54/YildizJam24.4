@@ -15,6 +15,7 @@ namespace Alren
         public static Alren.GameManager Instance;
         private Keyboard _keyboard;
         private GameOverController gameOverController;
+
         [Header("Resources and UI Relatives")]
         public List<Resource> res = new();
         [SerializeField] private List<TextMeshProUGUI> changeWorkerCountTexts = new();
@@ -56,6 +57,7 @@ namespace Alren
             new(-1.75f, 0, -1),
             new(0, 0, -2),
             new(1.75f, 0, -1)};
+
 
         private void Awake()
         {
