@@ -12,6 +12,14 @@ public class PauseManager : MonoBehaviour
     [SerializeField] private GameObject mainMenu;
     [SerializeField] private TowerManager towerManager;
 
+    [Header("Camera Animation")]
+    [SerializeField] private Animator _cameraAnimator;
+    private int[] _cameraAnimHashes = new int[2]
+    {
+            Animator.StringToHash("MainMenu"),
+            Animator.StringToHash("Game")
+    };
+
     private void Awake()
     {
         gameManager = GetComponent<GameManager>();
@@ -24,7 +32,9 @@ public class PauseManager : MonoBehaviour
         mainMenu.SetActive(false);
         disasterTimer.timerStarted = true;
         resourceGathering.isGameStarted = true;
-        towerManager.isGameStarted = true;
+        //towerManager.isGameStarted = true;
+
+        _cameraAnimator.Play(_cameraAnimHashes[1]);
     }
 
     public void QuitGame()
