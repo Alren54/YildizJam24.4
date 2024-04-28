@@ -54,7 +54,7 @@ namespace Alren
         {
             print("Felaketin kime yapilcagi belli");
             GameObject victimBay = selectedBay;
-            victimBay.GetComponent<Renderer>().material.color = Color.black;
+            victimBay.GetComponent<Renderer>().material.color = Color.blue;
 
             yield return new WaitForSeconds(victimBay.GetComponent<tzdevil.Gameplay.Hexagon>().HexagonType switch
             {
