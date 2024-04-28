@@ -178,9 +178,12 @@ namespace Alren
                 {
                     if (!Physics.Raycast(hexagon.transform.position + pos + new Vector3(0, 10, 0), Vector3.down, out RaycastHit hit, Mathf.Infinity, _hexagonLayer))
                     {
-                        bayHexagons.Add(hexagon);
-                        print("Kenar Hexa sec");
-                        break;
+                        if (hexagon.GetComponent<Hexagon>().Placed)
+                        {
+                            bayHexagons.Add(hexagon);
+                            print("Kenar Hexa sec");
+                            break;
+                        }
                     }
                 }
             }

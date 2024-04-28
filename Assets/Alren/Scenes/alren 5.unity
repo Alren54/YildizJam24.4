@@ -372,7 +372,7 @@ MonoBehaviour:
   _hexagonMeshMaterial:
     <Mesh>k__BackingField: {fileID: 0}
     <MaterialList>k__BackingField: []
-  _placed: 1
+  <Placed>k__BackingField: 1
   _lastPosition: {x: 0, y: 0, z: 0}
 --- !u!1 &379206364
 GameObject:
@@ -704,7 +704,7 @@ MonoBehaviour:
   _hexagonMeshMaterial:
     <Mesh>k__BackingField: {fileID: 0}
     <MaterialList>k__BackingField: []
-  _placed: 1
+  <Placed>k__BackingField: 1
   _lastPosition: {x: 0, y: 0, z: 0}
   _connectedObjects: []
 --- !u!1 &1023638870
@@ -4177,6 +4177,9 @@ MonoBehaviour:
   SandGatherTime: 10
   StoneGatherTime: 10
   FoodGatherTime: 10
+  currentSandGatherTime: 0
+  currentStoneGatherTime: 0
+  currentFoodGatherTime: 0
 --- !u!114 &3453686095657336308
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4308,7 +4311,7 @@ MonoBehaviour:
   _hexagonMeshMaterial:
     <Mesh>k__BackingField: {fileID: 0}
     <MaterialList>k__BackingField: []
-  _placed: 1
+  <Placed>k__BackingField: 1
   _lastPosition: {x: 0, y: 0, z: 0}
 --- !u!33 &3469287838433121111
 MeshFilter:
@@ -4393,7 +4396,7 @@ MonoBehaviour:
   _hexagonMeshMaterial:
     <Mesh>k__BackingField: {fileID: 0}
     <MaterialList>k__BackingField: []
-  _placed: 1
+  <Placed>k__BackingField: 1
   _lastPosition: {x: 0, y: 0, z: 0}
 --- !u!4 &3505433391105258144
 Transform:
@@ -7543,7 +7546,7 @@ MonoBehaviour:
   _hexagonMeshMaterial:
     <Mesh>k__BackingField: {fileID: 0}
     <MaterialList>k__BackingField: []
-  _placed: 1
+  <Placed>k__BackingField: 1
   _lastPosition: {x: 0, y: 0, z: 0}
 --- !u!114 &7376725360191642967
 MonoBehaviour:
@@ -7576,7 +7579,7 @@ MonoBehaviour:
   _hexagonMeshMaterial:
     <Mesh>k__BackingField: {fileID: 0}
     <MaterialList>k__BackingField: []
-  _placed: 1
+  <Placed>k__BackingField: 1
   _lastPosition: {x: 0, y: 0, z: 0}
 --- !u!114 &7376725360980060050
 MonoBehaviour:
@@ -7609,7 +7612,7 @@ MonoBehaviour:
   _hexagonMeshMaterial:
     <Mesh>k__BackingField: {fileID: 0}
     <MaterialList>k__BackingField: []
-  _placed: 1
+  <Placed>k__BackingField: 1
   _lastPosition: {x: 0, y: 0, z: 0}
 --- !u!114 &7486666559131117156
 MonoBehaviour:

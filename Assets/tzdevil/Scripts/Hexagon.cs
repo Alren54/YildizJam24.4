@@ -50,8 +50,8 @@ namespace tzdevil.Gameplay
         [field: SerializeField] public HexagonType HexagonType { get; set; }
         [SerializeField] private HexagonMeshMaterial _hexagonMeshMaterial;
 
-        [Header("Game Loop")]
-        [SerializeField] private bool _placed;
+        [field: Header("Game Loop")]
+        [field: SerializeField] public bool Placed { get; set; }
         [SerializeField] private Vector3 _lastPosition;
         [SerializeField] private RaycastHit[] _results;
 
@@ -64,7 +64,7 @@ namespace tzdevil.Gameplay
             _mouse = Mouse.current;
             _keyboard = Keyboard.current;
 
-            if (!_placed)
+            if (!Placed)
                 gameObject.layer = 0;
 
             _results = new RaycastHit[6];
@@ -144,7 +144,7 @@ namespace tzdevil.Gameplay
 
         private void CheckHexagonPlacement()
         {
-            if (_mouse.leftButton.wasPressedThisFrame && !_placed)
+            if (_mouse.leftButton.wasPressedThisFrame && !Placed)
             {
                 var pos = GetRoundedPosition(_transform.position);
 
@@ -158,7 +158,7 @@ namespace tzdevil.Gameplay
                 if (count == 0)
                     return;
 
-                _placed = true;
+                Placed = true;
                 _gameManager.OnPlaceNewHexagon?.Invoke(this);
                 Debug.Log("placed", gameObject);
 
@@ -173,7 +173,7 @@ namespace tzdevil.Gameplay
 
         private void HexagonMovement()
         {
-            if (!_placed)
+            if (!Placed)
             {
                 var pos = GetRoundedPositionHolding();
                 _transform.position = Vector3.Lerp(_transform.position, pos, MOVING_SMOOTHNESS * Time.deltaTime);
