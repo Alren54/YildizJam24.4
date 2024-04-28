@@ -51,6 +51,11 @@ namespace tzdevil.Gameplay
             _currentZoomValue = _cinemachine.Lens.OrthographicSize;
         }
 
+        public void ChangeMainMenuState(bool state)
+        {
+            _inMainMenu = state;
+        }
+
         private void Update()
         {
             if (_cameraCurrentlyInUse)
