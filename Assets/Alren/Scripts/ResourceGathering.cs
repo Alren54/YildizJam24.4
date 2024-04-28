@@ -47,7 +47,7 @@ public class ResourceGathering : MonoBehaviour
                 if (gameManager.res[0].WorkerCount > 0)
                 {
                     tempTimer = SandGatherTime;
-                    tempTimer = SandGatherTime * Mathf.Pow(0.8f, gameManager.res[0].WorkerCount - 1);
+                    tempTimer = SandGatherTime * Mathf.Pow(0.9f, gameManager.res[0].WorkerCount - 1);
                     currentSandGatherTime = tempTimer;
                 }
 
@@ -61,7 +61,7 @@ public class ResourceGathering : MonoBehaviour
                 if (gameManager.res[1].WorkerCount > 0)
                 {
                     tempTimer = StoneGatherTime;
-                    tempTimer = StoneGatherTime * Mathf.Pow(0.8f, gameManager.res[1].WorkerCount - 1);
+                    tempTimer = StoneGatherTime * Mathf.Pow(0.9f, gameManager.res[1].WorkerCount - 1);
                     currentStoneGatherTime = tempTimer;
                 }
             }
@@ -74,7 +74,7 @@ public class ResourceGathering : MonoBehaviour
                 if (gameManager.res[2].WorkerCount > 0)
                 {
                     tempTimer = FoodGatherTime;
-                    tempTimer = FoodGatherTime * Mathf.Pow(0.8f, gameManager.res[2].WorkerCount - 1);
+                    tempTimer = FoodGatherTime * Mathf.Pow(0.9f, gameManager.res[2].WorkerCount - 1);
                     currentFoodGatherTime = tempTimer;
                 }
             }

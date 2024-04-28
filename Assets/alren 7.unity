@@ -855,7 +855,7 @@ MonoBehaviour:
   - {x: 0, y: 0, z: -2}
   - {x: 1.75, y: 0, z: -1}
   _hexagonLayer: 64
-  <HexagonType>k__BackingField: 0
+  <HexagonType>k__BackingField: 1
   _hexagonMeshMaterial:
     <Mesh>k__BackingField: {fileID: 0}
     <MaterialList>k__BackingField: []
@@ -1378,7 +1378,7 @@ MonoBehaviour:
   - {x: 0, y: 0, z: -2}
   - {x: 1.75, y: 0, z: -1}
   _hexagonLayer: 64
-  <HexagonType>k__BackingField: 0
+  <HexagonType>k__BackingField: 1
   _hexagonMeshMaterial:
     <Mesh>k__BackingField: {fileID: 0}
     <MaterialList>k__BackingField: []
@@ -2820,7 +2820,7 @@ MonoBehaviour:
   - {x: 0, y: 0, z: -2}
   - {x: 1.75, y: 0, z: -1}
   _hexagonLayer: 64
-  <HexagonType>k__BackingField: 0
+  <HexagonType>k__BackingField: 1
   _hexagonMeshMaterial:
     <Mesh>k__BackingField: {fileID: 0}
     <MaterialList>k__BackingField: []
@@ -3179,13 +3179,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 980731542}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -5.25, y: -0.16, z: 1}
+  m_LocalRotation: {x: -0, y: 0.0028468112, z: 1.6968318e-10, w: -0.999996}
+  m_LocalPosition: {x: -5.25, y: -0.16000003, z: 1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: -0.326, z: 0}
 --- !u!1 &984676007
 GameObject:
   m_ObjectHideFlags: 0
@@ -3256,7 +3256,7 @@ MonoBehaviour:
   - {x: 0, y: 0, z: -2}
   - {x: 1.75, y: 0, z: -1}
   _hexagonLayer: 64
-  <HexagonType>k__BackingField: 0
+  <HexagonType>k__BackingField: 1
   _hexagonMeshMaterial:
     <Mesh>k__BackingField: {fileID: 0}
     <MaterialList>k__BackingField: []
@@ -4439,7 +4439,7 @@ MonoBehaviour:
   - {x: 0, y: 0, z: -2}
   - {x: 1.75, y: 0, z: -1}
   _hexagonLayer: 64
-  <HexagonType>k__BackingField: 0
+  <HexagonType>k__BackingField: 1
   _hexagonMeshMaterial:
     <Mesh>k__BackingField: {fileID: 0}
     <MaterialList>k__BackingField: []
@@ -7540,7 +7540,7 @@ MonoBehaviour:
   - {x: 0, y: 0, z: -2}
   - {x: 1.75, y: 0, z: -1}
   _hexagonLayer: 64
-  <HexagonType>k__BackingField: 0
+  <HexagonType>k__BackingField: 1
   _hexagonMeshMaterial:
     <Mesh>k__BackingField: {fileID: 0}
     <MaterialList>k__BackingField: []
@@ -7704,7 +7704,7 @@ MonoBehaviour:
   - {x: 0, y: 0, z: -2}
   - {x: 1.75, y: 0, z: -1}
   _hexagonLayer: 64
-  <HexagonType>k__BackingField: 0
+  <HexagonType>k__BackingField: 1
   _hexagonMeshMaterial:
     <Mesh>k__BackingField: {fileID: 0}
     <MaterialList>k__BackingField: []
@@ -7867,7 +7867,7 @@ MonoBehaviour:
   - {x: 0, y: 0, z: -2}
   - {x: 1.75, y: 0, z: -1}
   _hexagonLayer: 64
-  <HexagonType>k__BackingField: 0
+  <HexagonType>k__BackingField: 1
   _hexagonMeshMaterial:
     <Mesh>k__BackingField: {fileID: 0}
     <MaterialList>k__BackingField: []
@@ -8402,7 +8402,7 @@ MonoBehaviour:
   - {x: 0, y: 0, z: -2}
   - {x: 1.75, y: 0, z: -1}
   _hexagonLayer: 64
-  <HexagonType>k__BackingField: 0
+  <HexagonType>k__BackingField: 1
   _hexagonMeshMaterial:
     <Mesh>k__BackingField: {fileID: 0}
     <MaterialList>k__BackingField: []
@@ -8565,7 +8565,7 @@ MonoBehaviour:
   - {x: 0, y: 0, z: -2}
   - {x: 1.75, y: 0, z: -1}
   _hexagonLayer: 64
-  <HexagonType>k__BackingField: 0
+  <HexagonType>k__BackingField: 1
   _hexagonMeshMaterial:
     <Mesh>k__BackingField: {fileID: 0}
     <MaterialList>k__BackingField: []
@@ -13466,7 +13466,7 @@ MonoBehaviour:
   - {x: 0, y: 0, z: -2}
   - {x: 1.75, y: 0, z: -1}
   _hexagonLayer: 64
-  <HexagonType>k__BackingField: 0
+  <HexagonType>k__BackingField: 1
   _hexagonMeshMaterial:
     <Mesh>k__BackingField: {fileID: 0}
     <MaterialList>k__BackingField: []
@@ -13636,7 +13636,7 @@ MonoBehaviour:
   - {x: 0, y: 0, z: -2}
   - {x: 1.75, y: 0, z: -1}
   _hexagonLayer: 64
-  <HexagonType>k__BackingField: 0
+  <HexagonType>k__BackingField: 1
   _hexagonMeshMaterial:
     <Mesh>k__BackingField: {fileID: 0}
     <MaterialList>k__BackingField: []
@@ -16944,7 +16944,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isGameStarted: 0
   SandGatherTime: 10
-  StoneGatherTime: 10
+  StoneGatherTime: 12
   FoodGatherTime: 10
   currentSandGatherTime: 0
   currentStoneGatherTime: 0
@@ -19148,15 +19148,15 @@ MonoBehaviour:
   - {fileID: 7042849041199391608}
   tzGameManager: {fileID: 2551358444028398932}
   fastForwardImage: {fileID: 316826363431422542}
-  sandWorkerCount: 20
-  sandResourceCount: 300
-  stoneWorkerCount: 25
-  stoneResourceCount: 400
-  foodWorkerCount: 30
-  foodResourceCount: 200
-  villagerWorkerCount: 35
-  villagerResourceCount: 100
-  prices: 0f0000001400000028000000
+  sandWorkerCount: 0
+  sandResourceCount: 5
+  stoneWorkerCount: 0
+  stoneResourceCount: 3
+  foodWorkerCount: 0
+  foodResourceCount: 5
+  villagerWorkerCount: 15
+  villagerResourceCount: 0
+  prices: 0a0000000f0000000d000000
   _village: {fileID: 8431971725976195729}
   AllHexagons: []
   _hexagonLayer:
