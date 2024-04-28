@@ -9,6 +9,8 @@ namespace tzdevil.Gameplay
 {
     public class GameManager : MonoBehaviour
     {
+        private System.Random _random = new();
+
         private Mouse _mouse;
         private Keyboard _keyboard;
 
@@ -24,6 +26,7 @@ namespace tzdevil.Gameplay
 
         [Header("Hexagon Settings")]
         [SerializeField] private HexagonMeshMaterial[] _hexagonMeshMaterialList;
+        [SerializeField] private List<Hexagon> _sandList;
 
         [Header("Hexagon Properties")]
         [SerializeField] private HashSet<Vector3> _blankPlaces;
@@ -71,7 +74,16 @@ namespace tzdevil.Gameplay
             var hexagonType = (HexagonType)elementId;
             var hexagonMeshMaterial = _hexagonMeshMaterialList[elementId];
 
-            var hexagon = Instantiate(_hexagonPrefab, Vector3.one * 999, Quaternion.identity);
+            var hexagonPrefab = _hexagonPrefab;
+
+            if (hexagonType == HexagonType.Sand)
+            {
+                var random = _random.Next(0, 3);
+                print(random);
+                hexagonPrefab = _sandList[random];
+            }
+
+            var hexagon = Instantiate(hexagonPrefab, Vector3.one * 999, Quaternion.identity);
             hexagon.SetHexagonSettings(hexagonType, hexagonMeshMaterial, _blankPlaces.ToList());
         }
 
