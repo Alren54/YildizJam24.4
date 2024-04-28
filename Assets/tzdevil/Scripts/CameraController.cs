@@ -3,14 +3,14 @@ using Unity.Cinemachine;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-namespace ProjectLittle.GameplayRelated
+namespace tzdevil.Gameplay
 {
     public class CameraController : MonoBehaviour
     {
         private Mouse _mouse;
 
-        private const float MIN_ZOOM = 6f;
-        private const float MAX_ZOOM = 12f;
+        private const float MIN_ZOOM = 4.5f;
+        private const float MAX_ZOOM = 10f;
 
         [Header("References")]
         [SerializeField] private Transform _cinemachineTransform;
