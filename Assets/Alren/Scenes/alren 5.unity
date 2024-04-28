@@ -1972,8 +1972,9 @@ MonoBehaviour:
   m_text: "Ataberk Ak\u0131n - Game Designer\nAli Eren Ar\u0131k - Programmer\n\u0130brahim
     Umut Erol - Programmer\nSimge Temel - 3D Artist\nEnis Can Kastrat - 3D Artist"
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 7fc3a2bc3621e0f44bdb7e45cbb7fada, type: 2}
+  m_sharedMaterial: {fileID: -8569813389187617371, guid: 7fc3a2bc3621e0f44bdb7e45cbb7fada,
+    type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -5585,6 +5586,7 @@ MonoBehaviour:
   HUD: {fileID: 183258045721824562}
   mainMenu: {fileID: 5389597886112232380}
   towerManager: {fileID: 7798619935400223208}
+  _cameraAnimator: {fileID: 0}
 --- !u!114 &3796407034519931990
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7004,7 +7006,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!23 &5394493280657248061
 MeshRenderer:
   m_ObjectHideFlags: 0
