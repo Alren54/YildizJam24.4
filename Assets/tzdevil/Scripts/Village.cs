@@ -13,15 +13,18 @@ namespace tzdevil.Gameplay
             FindAllIslands();
         }
 
-        public List<Transform> FindAllIslands()
+        public HashSet<Transform> FindAllIslands()
         {
             var allHexagons = FindObjectsByType<Hexagon>(FindObjectsSortMode.None).Where(h => h != this).Select(h => h.transform);
 
+            _connectedObjects = new();
             var connectedObjects = FindConnectedObjects(transform);
 
-            var islandList = allHexagons.Except(connectedObjects).ToList();
+            var islandList = allHexagons.Except(_connectedObjects).ToList();
 
-            return islandList.OrderBy(o => Vector3.Magnitude(o.transform.position - _transform.position)).ToList();
+            print(islandList.Count);
+
+            return islandList.OrderBy(o => Vector3.Magnitude(o.transform.position - _transform.position)).ToHashSet();
         }
 
         private List<Transform> FindConnectedObjects(Transform currentTransform)

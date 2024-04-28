@@ -143,9 +143,15 @@ namespace tzdevil.Gameplay
             if (_mouse.leftButton.wasPressedThisFrame && !_placed)
             {
                 var pos = GetRoundedPosition(_transform.position);
-                pos.y = 0;
 
-                if (!_placesYouCanPlaceHexagon.Contains(pos))
+                var count = 0;
+                foreach (var raycastPos in _raycastPoses)
+                {
+                    if (Physics.RaycastNonAlloc(pos + raycastPos + Vector3.up * 10, Vector3.down, _results, Mathf.Infinity, 1 << 6) > 0)
+                        count++;
+                }
+
+                if (count == 0)
                     return;
 
                 _placed = true;
@@ -178,15 +184,11 @@ namespace tzdevil.Gameplay
                 {
                     if (Physics.RaycastNonAlloc(pointAboveMouse + pos + Vector3.up * 10, Vector3.down, _results, Mathf.Infinity, 1 << 6) > 0)
                         count++;
-
-                    print("alo");
-
-                    Debug.DrawRay(pointAboveMouse + pos + Vector3.up, Vector3.down, Color.yellow, 100f);
                 }
 
                 if (count == 0)
                 {
-                    print("You can't place the hexagon here!");
+                    //print("You can't place the hexagon here!");
                 }
 
                 if (Physics.Raycast(pointAboveMouse + Vector3.up * 10, Vector3.down, out RaycastHit hit2, Mathf.Infinity, 1 << 6 | 1 << 7))

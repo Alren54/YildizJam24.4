@@ -44,6 +44,7 @@ namespace Alren
         [SerializeField] private List<int> prices;
 
         [Header("Hexagons")]
+        public Village _village;
         [HideInInspector] public List<GameObject> AllHexagons;
         [SerializeField] LayerMask _hexagonLayer;
         private List<GameObject> bayHexagons = new();
@@ -212,12 +213,13 @@ namespace Alren
             print("Felaket Basliyor");
 
             mainHex.transform.DOScaleY(0, .5f).SetEase(Ease.InCubic);
-
-            yield return new WaitForSeconds(.54f);
+            mainHex.layer = 0;
 
             print("Felaketin ilki bitti");
 
             AllHexagons.Remove(mainHex);
+
+            yield return new WaitForSeconds(.54f);
 
             HexagonType destroyedHexType = mainHex.GetComponent<Hexagon>().HexagonType;
 
@@ -233,20 +235,43 @@ namespace Alren
             if (destroyedHexType == HexagonType.Sand && alternativeHex != null)
             {
                 alternativeHex.transform.DOScaleY(0, .5f).SetEase(Ease.InCubic);
+                alternativeHex.layer = 0;
+
+                AllHexagons.Remove(alternativeHex);
 
                 yield return new WaitForSeconds(.54f);
 
-                print("Felaketin ikimcisi bitti");
-                AllHexagons.Remove(alternativeHex);
                 if (alternativeHex.GetComponent<Hexagon>() is Village or Building)
                 {
                     print("Game over!");
                     gameOverController.CheckIfAllBuildingsAlive();
-                }
 
+                }
                 Destroy(alternativeHex);
                 print("Bina yikildi");
+            }
 
+            StartCoroutine(DestroyIslands());
+        }
+
+        private IEnumerator DestroyIslands()
+        {
+            print("ahoy");
+            var islandList = _village.FindAllIslands().ToList();
+            for (int i = 0; i < islandList.Count; i++)
+            {
+                if (islandList[i] == null) continue;
+
+                var islandObject = islandList[i].gameObject;
+
+                islandList[i].DOScaleY(0, .5f).SetEase(Ease.InCubic);
+
+                islandObject.layer = 0;
+
+                Destroy(islandObject, .6f);
+                AllHexagons.Remove(islandObject);
+
+                yield return new WaitForSeconds(.05f);
             }
         }
     }

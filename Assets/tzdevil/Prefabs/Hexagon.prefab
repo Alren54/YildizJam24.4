@@ -10,10 +10,9 @@ GameObject:
   m_Component:
   - component: {fileID: 1807968971048802395}
   - component: {fileID: 8313955611247176350}
-  - component: {fileID: 7414841296034224728}
   - component: {fileID: 8631787462217159819}
   - component: {fileID: 7376725360666682536}
-  - component: {fileID: 7885561802922925572}
+  - component: {fileID: 6258569382311201071}
   m_Layer: 6
   m_Name: Hexagon
   m_TagString: Untagged
@@ -30,7 +29,7 @@ Transform:
   m_GameObject: {fileID: 1417395725519817228}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 3.5, y: 0, z: 2}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -43,28 +42,6 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1417395725519817228}
-  m_Mesh: {fileID: -4575734979276873811, guid: 5a6c3e9830b1da54683265d9577f43fe, type: 3}
---- !u!64 &7414841296034224728
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1417395725519817228}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 5
-  m_Convex: 0
-  m_CookingOptions: 30
   m_Mesh: {fileID: -4575734979276873811, guid: 5a6c3e9830b1da54683265d9577f43fe, type: 3}
 --- !u!23 &8631787462217159819
 MeshRenderer:
@@ -86,7 +63,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: b923661f347eedb4280691c080ea2221, type: 2}
+  - {fileID: 2100000, guid: 7ff4da8451d90f3439e537f0c77281b0, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -122,10 +99,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _transform: {fileID: 0}
   _gameManager: {fileID: 0}
+  _alrenManager: {fileID: 0}
   _camera: {fileID: 0}
   _renderer: {fileID: 0}
-  _mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
   _meshFilter: {fileID: 8313955611247176350}
+  _placesYouCanPlaceHexagon: []
   _raycastPoses:
   - {x: -1.75, y: 0, z: 1}
   - {x: 0, y: 0, z: 2}
@@ -134,11 +112,14 @@ MonoBehaviour:
   - {x: 0, y: 0, z: -2}
   - {x: 1.75, y: 0, z: -1}
   _hexagonLayer: 64
-  _hexagonType: 0
-  _material: {fileID: 2100000, guid: df0f2efc606a64642a13f7d0fab0c557, type: 2}
+  <HexagonType>k__BackingField: 0
+  _hexagonMeshMaterial:
+    <Mesh>k__BackingField: {fileID: 0}
+    <MaterialList>k__BackingField: []
   _placed: 0
---- !u!64 &7885561802922925572
-MeshCollider:
+  _lastPosition: {x: 0, y: 0, z: 0}
+--- !u!65 &6258569382311201071
+BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -155,7 +136,6 @@ MeshCollider:
   m_IsTrigger: 0
   m_ProvidesContacts: 0
   m_Enabled: 1
-  serializedVersion: 5
-  m_Convex: 1
-  m_CookingOptions: 30
-  m_Mesh: {fileID: -4575734979276873811, guid: 5a6c3e9830b1da54683265d9577f43fe, type: 3}
+  serializedVersion: 3
+  m_Size: {x: 2.2698586, y: 1.1499997, z: 1.9918582}
+  m_Center: {x: 0, y: 0.57499987, z: 0.000000059604645}

@@ -60,8 +60,8 @@ namespace Alren
 
             yield return new WaitForSeconds(victimBay.GetComponent<tzdevil.Gameplay.Hexagon>().HexagonType switch
             {
-                HexagonType.Sand => 3f,
-                HexagonType.Stone => 3f,
+                HexagonType.Sand => 1f,
+                HexagonType.Stone => 1f,
                 _ => throw new Exception("Kaç saniye beklicem bu cisim ne")
             });
             StartCoroutine(gameManager.StartDisaster(victimBay));
