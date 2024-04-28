@@ -1,7 +1,9 @@
+using DG.Tweening;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using Random = System.Random;
 
 namespace tzdevil.Gameplay
 {
@@ -14,6 +16,8 @@ namespace tzdevil.Gameplay
 
     public class Hexagon : MonoBehaviour/*, IPointerClickHandler*/
     {
+        private Random _random = new();
+
         private Mouse _mouse;
         private Keyboard _keyboard;
 
@@ -157,6 +161,11 @@ namespace tzdevil.Gameplay
                 _placed = true;
                 _gameManager.OnPlaceNewHexagon?.Invoke(this);
                 Debug.Log("placed", gameObject);
+
+                _transform.localScale = Vector3.zero;
+                _transform.position += new Vector3(0, _random.Next(-4, 2) / 10f, 0);
+
+                _transform.DOScale(Vector3.one, .5f).SetEase(Ease.OutBack);
 
                 gameObject.layer = 6;
             }
