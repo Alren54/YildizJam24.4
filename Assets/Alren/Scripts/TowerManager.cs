@@ -23,7 +23,8 @@ public class TowerManager : MonoBehaviour
             timer += Time.deltaTime;
             if(towerFloors.Count > deactiveIndex && timer > floorCreationTimeInterval * deactiveIndex)
             {
-                towerFloors[deactiveIndex].transform.DOMoveY(towerFloors[deactiveIndex].transform.position.y + deactiveIndex, floorElevationTime);
+                towerFloors[deactiveIndex].SetActive(true);
+                towerFloors[deactiveIndex].transform.DOLocalMoveY(0, floorElevationTime);
                 deactiveIndex++;
             }
         }
