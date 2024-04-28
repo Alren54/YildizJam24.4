@@ -1157,7 +1157,7 @@ MonoBehaviour:
         m_Calls:
         - m_Target: {fileID: 3754161630291846508}
           m_TargetAssemblyTypeName: PauseManager, Assembly-CSharp
-          m_MethodName: StartGame
+          m_MethodName: 
           m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
