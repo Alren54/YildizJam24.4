@@ -5262,7 +5262,7 @@ Camera:
   far clip plane: 1000
   field of view: 60.000004
   orthographic: 1
-  orthographic size: 6.55
+  orthographic size: 10
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -5286,8 +5286,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1356136997}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.09904577, y: -0.89239913, z: 0.23911765, w: 0.3696438}
-  m_LocalPosition: {x: -1.4, y: -1.43, z: -6.41}
+  m_LocalRotation: {x: 0.1464466, y: -0.8535535, z: 0.35355338, w: 0.35355338}
+  m_LocalPosition: {x: 0, y: 1.13, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -14951,10 +14951,10 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Ataberk Ak\u0131n - Game Designer\nAli Eren Ar\u0131k - Programmer\n\u0130brahim
+  m_text: "Ataberk Ak\u0131n - Game Designer\nAli Eren Ar\u0131k - Programmer\nIbrahim
     Umut Erol - Programmer\nSimge Temel - 3D Artist\nEnis Can Kastrat - 3D Artist\n\nSpecial
     Thanks To\n- Seran Akyaz\u0131c\u0131 (For letting us to use her kalimba)\n-
-    \xD6zg\xFCr \u015Eahin Alt\u0131n (For letting us to use her microphone)\n- To
+    \xD6zg\xFCr \u015Eahin Alt\u0131n (For letting us to use his microphone)\n- To
     all other jammers who played our game and gave valuable feedback to us"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 7fc3a2bc3621e0f44bdb7e45cbb7fada, type: 2}
